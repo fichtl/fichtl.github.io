@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-09-02 周五 15:49 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algorithm</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Zhihao Wang" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript" async
+        src="./MathJax/MathJax.js">
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Algorithm</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline35">1. Some Algorithm</a>
+<ul>
+<li><a href="#orgheadline4">1.1. Bubble Sort</a>
+<ul>
+<li><a href="#orgheadline1">1.1.1. basic</a></li>
+<li><a href="#orgheadline2">1.1.2. better</a></li>
+<li><a href="#orgheadline3">1.1.3. betterer</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline8">1.2. Insertion Sort</a>
+<ul>
+<li><a href="#orgheadline5">1.2.1. basic</a></li>
+<li><a href="#orgheadline6">1.2.2. better</a></li>
+<li><a href="#orgheadline7">1.2.3. betterer</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline13">1.3. Shell Sort</a>
+<ul>
+<li><a href="#orgheadline9">1.3.1. basic</a></li>
+<li><a href="#orgheadline10">1.3.2. better</a></li>
+<li><a href="#orgheadline11">1.3.3. betterer</a></li>
+<li><a href="#orgheadline12">1.3.4. the choice of step length</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline14">1.4. Select Sort</a></li>
+<li><a href="#orgheadline15">1.5. Merge Sort</a></li>
+<li><a href="#orgheadline19">1.6. Quick Sort</a>
+<ul>
+<li><a href="#orgheadline16">1.6.1. Adjust Array</a></li>
+<li><a href="#orgheadline17">1.6.2. Divide and Conquer</a></li>
+<li><a href="#orgheadline18">1.6.3. basic</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline25">1.7. Heap Sort</a>
+<ul>
+<li><a href="#orgheadline20">1.7.1. Fixup (make the tree follow the definition)</a></li>
+<li><a href="#orgheadline21">1.7.2. Insertion</a></li>
+<li><a href="#orgheadline22">1.7.3. Deletion</a></li>
+<li><a href="#orgheadline23">1.7.4. Make a heap minHeap</a></li>
+<li><a href="#orgheadline24">1.7.5. Heap sort</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline26">1.8. Radix Sort</a></li>
+<li><a href="#orgheadline27">1.9. Find repeat number</a></li>
+<li><a href="#orgheadline31">1.10. Find single number(with others are doubled)</a>
+<ul>
+<li><a href="#orgheadline28">1.10.1. only one number</a></li>
+<li><a href="#orgheadline29">1.10.2. two number</a></li>
+<li><a href="#orgheadline30">1.10.3. three or more number <b>cannot</b> use binary operation</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline32">1.11. Find one single number(with others are trippled or more)</a></li>
+<li><a href="#orgheadline33">1.12. Generate N number of which the sum is S</a></li>
+<li><a href="#orgheadline34">1.13. Find a number in an array, the difference of two neighbor in this array is 1</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline36">2. Document Distance</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline35" class="outline-2">
+<h2 id="orgheadline35"><span class="section-number-2">1</span> Some Algorithm</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">1.1</span> Bubble Sort</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> basic</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">BubbleSort1</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>;
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=0; i&lt;n; i++ ) {
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( j=0; j&lt;n-i; j++ ) {
+            <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[j-1]&gt;a[j] )
+                swap(a[j-1], a[j]);
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-4">
+<h4 id="orgheadline2"><span class="section-number-4">1.1.2</span> better</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">BubbleSort2</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>;
+    <span style="color: #ce537a; font-weight: bold;">bool</span> <span style="color: #7590db;">flag</span> = <span style="color: #a45bad;">true</span>;
+    j = n;
+    <span style="color: #4f97d7; font-weight: bold;">while</span>( flag ) {
+        flag = flase;
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=0; i&lt;j; i++ ) {
+            <span style="color: #4f97d7; font-weight: bold;">if</span> (a[i-1]&gt;a[i]) {
+                swap(a[i-1], a[i]);
+                flag = <span style="color: #a45bad;">true</span>;
+            }
+        }
+        j--;
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-4">
+<h4 id="orgheadline3"><span class="section-number-4">1.1.3</span> betterer</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">BubbleSort3</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>, <span style="color: #7590db;">flag</span>;
+
+    flag = n;
+    <span style="color: #4f97d7; font-weight: bold;">while</span>( flag&gt;0 ) {
+        j = flag;
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=1; i&lt;<span style="color: #ce537a; font-weight: bold;">j</span>; i++ ) {
+            <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[i-1]&gt;a[i] ) {
+                swap(a[i-1], a[i]);
+                flag = i;
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">1.2</span> Insertion Sort</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.2.1</span> basic</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">InsertSort1</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>;
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=1; i&lt;<span style="color: #ce537a; font-weight: bold;">n</span>; i++ ) {
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( j=i-1; j&gt;=0; j-- )
+            <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[j] &lt; a[i] )
+                <span style="color: #4f97d7; font-weight: bold;">break</span>;          <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">this is what a[i] should be</span>
+
+        <span style="color: #4f97d7; font-weight: bold;">if</span> ( j != i-1) {        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">insert it into a[j+1]</span>
+            <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tmp</span> = a[i];
+            <span style="color: #4f97d7; font-weight: bold;">for</span> ( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">k</span>=i-1; k&gt;j; k++ )
+                a[k+1] = a[k];
+            a[k+1] = tmp;
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.2.2</span> better</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">InsertSort2</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>;
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=1; i&lt;<span style="color: #ce537a; font-weight: bold;">n</span>; i++ ) {
+        <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[i] &lt; a[i-1] ) {
+            <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tmp</span> = a[i];
+            <span style="color: #4f97d7; font-weight: bold;">for</span> ( j=i-1; j&gt;=0 &amp;&amp; a[j] &gt; tmp; j-- )
+                a[j+1] = a[j];
+            a[j+1] = tmp;
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.2.3</span> betterer</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">InsertSort3</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>;
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=1; i&lt;<span style="color: #ce537a; font-weight: bold;">n</span>; i++ )
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( j=i-1; j&gt;=0 &amp;&amp; a[j] &gt; a[j+1]; j-- )
+            swap(a[j], a[j+1]);
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">1.3</span> Shell Sort</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">1.3.1</span> basic</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">shellsort1</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>, <span style="color: #7590db;">gap</span>;
+
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( gap=n/2; gap&gt;0; gap/=2 ) {
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=0; i&lt;<span style="color: #ce537a; font-weight: bold;">gap</span>; i++ ) {
+            <span style="color: #4f97d7; font-weight: bold;">for</span> ( j=i+gap; j&lt;<span style="color: #ce537a; font-weight: bold;">n</span>; j+=gap ) {
+                <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[j] &lt; a[j-gap] ) {
+                    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tmp</span> = a[j];
+                    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">k</span> = j-gap;
+                    <span style="color: #4f97d7; font-weight: bold;">while</span> ( k&gt;=0 &amp;&amp; a[k]&gt;tmp ) { <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">do swap</span>
+                        a[k+gap] = a[k];
+                        k -= gap;
+                    }
+                    a[k+gap] = tmp;
+                }
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">1.3.2</span> better</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">shellsort2</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">j</span>, <span style="color: #7590db;">gap</span>;
+
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( gap=n/2; gap&gt;0; gap/=2 ) {
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( j=gap; j&lt;<span style="color: #ce537a; font-weight: bold;">n</span>; j++ ) {
+            <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[j]&lt;a[j-gap] ) {
+                <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tmp</span> = a[j];
+                <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">k</span> = j-gap;
+                <span style="color: #4f97d7; font-weight: bold;">while</span>( k&gt;=0 &amp;&amp; a[k]&gt;tmp ) {
+                    a[k+gap] = a[k];
+                    k -= gap;
+                }
+                a[k+gap] = tmp;
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-4">
+<h4 id="orgheadline11"><span class="section-number-4">1.3.3</span> betterer</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">shellsort3</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>, <span style="color: #7590db;">gap</span>;
+
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( gap=n/2; gap&gt;0; gap/=2 ) {
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=gap; i&lt;<span style="color: #ce537a; font-weight: bold;">n</span>; i++ ) {
+            <span style="color: #4f97d7; font-weight: bold;">for</span> ( j=i-gap; j&gt;=0 &amp;&amp; a[j] &gt; a[j+gap]; j-=gap )
+                swap(a[j], a[j+gap]);
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">1.3.4</span> the choice of step length</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<p>
+<a href="https://en.wikipedia.org/wiki/Shellsort">Shellsort</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14"><span class="section-number-3">1.4</span> Select Sort</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">selectsort</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>, <span style="color: #7590db;">nMinIndex</span>;
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( i=0; i&lt;<span style="color: #ce537a; font-weight: bold;">n</span>; i++ ) {
+        nMinIndex = i;
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( j=i+1; j&lt;<span style="color: #ce537a; font-weight: bold;">n</span>; j++ ) {
+            <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[j]&lt;a[nMinIndex] ) {
+                nMinIndex = j;
+            }
+        }
+        swap(a[j], a[nMinIndex]);
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15"><span class="section-number-3">1.5</span> Merge Sort</h3>
+<div class="outline-text-3" id="text-1-5">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">memeryarray</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">first</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">mid</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">last</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tmp</span>[]) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> = first,   <span style="color: #7590db;">m</span> = mid;
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">j</span> = first+1, <span style="color: #7590db;">n</span> = last;
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">k</span> = 0;
+
+    <span style="color: #4f97d7; font-weight: bold;">while</span> ( i&lt;=m &amp;&amp; j&lt;=n ) {
+        <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[i] &lt;= b[j] )
+            tmp[k++] = a[i++];
+        <span style="color: #4f97d7; font-weight: bold;">else</span>
+            tmp[k++] = b[j++];
+    }
+
+    <span style="color: #4f97d7; font-weight: bold;">while</span> ( i &lt;= m )
+        tmp[k++] = a[i++];
+
+    <span style="color: #4f97d7; font-weight: bold;">while</span> ( j &lt;= n )
+        tmp[k++] = b[j++];
+
+    <span style="color: #4f97d7; font-weight: bold;">for</span> ( i = 0; i &lt; k; i++ )
+        a[first + i] = tmp[i];
+}
+
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">mergesort</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">first</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">last</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tmp</span>[]) {
+    <span style="color: #4f97d7; font-weight: bold;">if</span> ( first &lt; last ) {
+        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">mid</span> = (first + last)/2;
+        mergesort(a, first, mid, tmp);
+        mergesort(a, mid, last, tmp);
+        mergearray(a, first, mid, last, tmp)
+    }
+}
+
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">MergeSort</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> *<span style="color: #7590db;">p</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">int</span>[n];
+    <span style="color: #4f97d7; font-weight: bold;">if</span> (p == <span style="color: #a45bad;">NULL</span>)
+        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">false</span>;
+    mergesort(a, 0, n-1, p);
+    <span style="color: #4f97d7; font-weight: bold;">delete</span>[] p;
+    <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">true</span>
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">1.6</span> Quick Sort</h3>
+<div class="outline-text-3" id="text-1-6">
+</div><div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.6.1</span> Adjust Array</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">AdjustArray</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">s</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">l</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">r</span>)
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> = l, <span style="color: #7590db;">j</span> = r;
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">x</span> = s[i];
+  <span style="color: #4f97d7; font-weight: bold;">while</span> ( i &lt; j ) {
+    <span style="color: #4f97d7; font-weight: bold;">while</span> ( i &lt; j &amp;&amp; s[j] &gt;= x )
+      j--;
+    <span style="color: #4f97d7; font-weight: bold;">if</span> ( i &lt; j ) {
+      s[i] = s[j];
+      i++;
+    }
+
+    <span style="color: #4f97d7; font-weight: bold;">while</span> ( i &lt; j &amp;&amp; s[i] &lt;= x)
+      i++;
+    <span style="color: #4f97d7; font-weight: bold;">if</span> ( i &lt; j ) {
+      s[j] = s[i];
+      j--;
+    }
+  }
+  s[i] = x;
+
+  <span style="color: #4f97d7; font-weight: bold;">return</span> i;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">1.6.2</span> Divide and Conquer</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">dac</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">s</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">l</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">r</span>)
+{
+  <span style="color: #4f97d7; font-weight: bold;">if</span> ( l &lt; r ) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> = AdjustArray(s, l, r);
+    dac(s, l, i-1);
+    dac(s, i+1, r);
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">1.6.3</span> basic</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">quick_sort</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">s</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">l</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">r</span>)
+{
+  <span style="color: #4f97d7; font-weight: bold;">if</span> ( l &lt; r ) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> = l, <span style="color: #7590db;">j</span> = r, <span style="color: #7590db;">x</span> = s[i];
+    <span style="color: #4f97d7; font-weight: bold;">while</span> ( i &lt; j ) {
+      <span style="color: #4f97d7; font-weight: bold;">while</span> ( i &lt; j &amp;&amp; s[j] &gt;= x )
+        j--;
+      <span style="color: #4f97d7; font-weight: bold;">if</span> ( i &lt; j )
+        s[i++] = s[j];
+
+      <span style="color: #4f97d7; font-weight: bold;">while</span> ( i &lt; j &amp;&amp; s[i] &lt;= x )
+        i++;
+      <span style="color: #4f97d7; font-weight: bold;">if</span> ( i &lt; j )
+        s[j--] = s[i];
+    }
+    s[i] = x;
+    quick_sort(s, l, i-1);
+    quick_sort(s, i+1, r);
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25"><span class="section-number-3">1.7</span> Heap Sort</h3>
+<div class="outline-text-3" id="text-1-7">
+</div><div id="outline-container-orgheadline20" class="outline-4">
+<h4 id="orgheadline20"><span class="section-number-4">1.7.1</span> Fixup (make the tree follow the definition)</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">minHeapFixUp</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> )
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">j</span>, <span style="color: #7590db;">tmp</span>;
+
+  tmp = a[i];
+  j = (i-1)/2;
+  <span style="color: #4f97d7; font-weight: bold;">while</span> ( j&gt;=0 &amp;&amp; i!=0 )
+    {
+      <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[j]&lt;=tmp )
+        <span style="color: #4f97d7; font-weight: bold;">break</span>;
+      a[i] = a[j];
+      i = j;
+      j = (i-1)/2;
+    }
+  a[i] = tmp;
+}
+
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">minHeapFixDown</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span> )
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">j</span>, <span style="color: #7590db;">tmp</span>;
+
+  tmp = a[i];
+  j = 2*i + 1;
+  <span style="color: #4f97d7; font-weight: bold;">while</span> ( j&lt;n )
+    {
+      <span style="color: #4f97d7; font-weight: bold;">if</span> ( j+1&lt;n &amp;&amp; a[j+1]&lt;a[j] )
+        {
+          j++;
+        }
+      <span style="color: #4f97d7; font-weight: bold;">if</span> ( a[j]&gt;=tmp )
+          <span style="color: #4f97d7; font-weight: bold;">break</span>;
+      a[i] = a[j];
+      i = j;
+      j = 2*i + 1;
+    }
+  a[i] = tmp;
+}
+</pre>
+</div>
+<p>
+Better:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">minHeapFixUp</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> )
+{
+  <span style="color: #4f97d7; font-weight: bold;">for</span> ( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">j</span>=(i-1)/2; j&gt;=0 &amp;&amp; i!=0 &amp;&amp; a[i]&gt;a[j]; i=j, j=(i-1)/2 )
+    {
+      Swap(a[i], a[j])
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline21" class="outline-4">
+<h4 id="orgheadline21"><span class="section-number-4">1.7.2</span> Insertion</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">minHeapInsertion</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">nNum</span> )
+{
+  a[n] = nNum;
+  minHeapFixup(a, n);
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline22" class="outline-4">
+<h4 id="orgheadline22"><span class="section-number-4">1.7.3</span> Deletion</h4>
+<div class="outline-text-4" id="text-1-7-3">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">minHeapDeletion</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span> )
+{
+  Swap(a[0], a[n-1]);
+  minHeapFixDown(a, 0, n-1);
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline23" class="outline-4">
+<h4 id="orgheadline23"><span class="section-number-4">1.7.4</span> Make a heap minHeap</h4>
+<div class="outline-text-4" id="text-1-7-4">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">makeMinHeap</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span> )
+{
+  <span style="color: #4f97d7; font-weight: bold;">for</span> ( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=(n-1)/2; i&gt;=0; i-- )
+    {
+      minHeapFixDown( a, i, n);
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline24" class="outline-4">
+<h4 id="orgheadline24"><span class="section-number-4">1.7.5</span> Heap sort</h4>
+<div class="outline-text-4" id="text-1-7-5">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">minHeapSort</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], n )  <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">min heap makes descend array</span>
+{
+  <span style="color: #4f97d7; font-weight: bold;">for</span> ( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=n-1; i&gt;=0; i-- )
+    {
+      Swap(a[i], a[0]);
+      makeMinHeap( a, i );
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26"><span class="section-number-3">1.8</span> Radix Sort</h3>
+<div class="outline-text-3" id="text-1-8">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">maxbit</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">data</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>)
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">maxData</span> = data[0];
+  <span style="color: #4f97d7; font-weight: bold;">for</span> ( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0; i&lt;n; i++ )
+    {
+      <span style="color: #4f97d7; font-weight: bold;">if</span> ( maxData&lt;data[i] )
+        {
+          maxData = data[i];
+        }
+    }
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">d</span> = 1;
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">p</span> = 10;
+  <span style="color: #4f97d7; font-weight: bold;">while</span> ( maxData&gt;=p )
+    {
+      p *= 10;
+      d++;
+    }
+  <span style="color: #4f97d7; font-weight: bold;">return</span> d;
+}
+
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">radixSort</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">data</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>)
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">d</span> = maxbit(data, n);
+  <span style="color: #ce537a; font-weight: bold;">int</span> *<span style="color: #7590db;">tmp</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">int</span>[n];
+  <span style="color: #ce537a; font-weight: bold;">int</span> *<span style="color: #7590db;">count</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">int</span>[10];
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>, <span style="color: #7590db;">k</span>;
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">radix</span> = 1;
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( i=1; i&lt;=d; i++ )
+    {
+      <span style="color: #4f97d7; font-weight: bold;">for</span>( j=0; j&lt;10; j++ )
+        {
+          count[j] = 0;
+        }
+      <span style="color: #4f97d7; font-weight: bold;">for</span>( j=0; j&lt;n; j++ )
+        {
+          k = (data[j]/radix) % 10;
+          count[k]++;
+        }
+      <span style="color: #4f97d7; font-weight: bold;">for</span>( j=1; j&lt;10; j++ )
+        {
+          count[j] = count[j-1] + count[j];
+        }
+      <span style="color: #4f97d7; font-weight: bold;">for</span>( j=n-1; j&gt;=0; j-- )
+        {
+          k = (data[j]/radix) % 10;
+          tmp[count[k]-1] = data[j];
+          count[k]--;
+        }
+      <span style="color: #4f97d7; font-weight: bold;">for</span>( j=0; j&lt;n; j++ )
+        {
+          data[j] = tmp[j];
+        }
+      radix = radix * 10;
+    }
+  <span style="color: #4f97d7; font-weight: bold;">delete</span> []tmp;
+  <span style="color: #4f97d7; font-weight: bold;">delete</span> []count;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27"><span class="section-number-3">1.9</span> Find repeat number</h3>
+<div class="outline-text-3" id="text-1-9">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Idea: if a number exists, it would be marked by a flag</span>
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">So, those number with flag are thought repeated</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">Repeat</span>(<span style="color: #ce537a; font-weight: bold;">int</span> *<span style="color: #7590db;">array</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>)
+{
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0; i&lt;n; i++ ) {
+    index = a[i]&gt;=n ? a[i]-n : a[i];
+    <span style="color: #4f97d7; font-weight: bold;">if</span>( index&gt;=n ) {
+        <span style="color: #4f97d7; font-weight: bold;">return</span> array[i];
+    }
+    <span style="color: #4f97d7; font-weight: bold;">else</span> {
+      array[ index ] += n;
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31"><span class="section-number-3">1.10</span> Find single number(with others are doubled)</h3>
+<div class="outline-text-3" id="text-1-10">
+</div><div id="outline-container-orgheadline28" class="outline-4">
+<h4 id="orgheadline28"><span class="section-number-4">1.10.1</span> only one number</h4>
+<div class="outline-text-4" id="text-1-10-1">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">oneSingle</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>)
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">tmp</span> = 0;
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0; i&lt;n; i++ ) {
+    tmp ^= a[i];                <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">simple and beautiful</span>
+  }
+  <span style="color: #4f97d7; font-weight: bold;">return</span> tmp
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">1.10.2</span> two number</h4>
+<div class="outline-text-4" id="text-1-10-2">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">twoSingle</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>, <span style="color: #ce537a; font-weight: bold;">int</span> *<span style="color: #7590db;">s1</span>, <span style="color: #ce537a; font-weight: bold;">int</span> *<span style="color: #7590db;">s2</span>)
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>, <span style="color: #7590db;">j</span>, <span style="color: #7590db;">tmp</span>;
+  tmp = 0;
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( i=0; i&lt;n; i++ ) {
+    tmp ^= a[i];
+  }
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( j=0; j&lt;<span style="color: #4f97d7; font-weight: bold;">sizeof</span>(<span style="color: #ce537a; font-weight: bold;">int</span>)*8; j++ ) {
+    <span style="color: #4f97d7; font-weight: bold;">if</span>( ((temp&gt;&gt;j) &amp; 1) == 1 )
+      <span style="color: #4f97d7; font-weight: bold;">break</span>;
+  }
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( i=0; i&lt;n; i++ ) {
+    <span style="color: #4f97d7; font-weight: bold;">if</span>( ((a[i]&gt;&gt;j) &amp; 1) == 0 ) {
+      *s1 ^= a[i];
+    }
+    <span style="color: #4f97d7; font-weight: bold;">else</span> {
+      *s2 ^= a[i];
+    }
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">1.10.3</span> three or more number <b>cannot</b> use binary operation</h4>
+</div>
+</div>
+<div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32"><span class="section-number-3">1.11</span> Find one single number(with others are trippled or more)</h3>
+<div class="outline-text-3" id="text-1-11">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">findSingle</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">repeat</span>)
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">count</span>[<span style="color: #4f97d7; font-weight: bold;">sizeof</span>(<span style="color: #ce537a; font-weight: bold;">int</span>)*8];
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0; i&lt;<span style="color: #4f97d7; font-weight: bold;">sizeof</span>(<span style="color: #ce537a; font-weight: bold;">int</span>)*8; i++ ) {
+    count[i] = 0;
+    <span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">j</span>=0; j&lt;n; j++ ) {
+      count[i] += ((a[j]&gt;&gt;i) &amp; 1);
+    }
+  }
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">result</span> = 0;
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0; i&lt;<span style="color: #4f97d7; font-weight: bold;">sizeof</span>(<span style="color: #ce537a; font-weight: bold;">int</span>)*8; i++ ) {
+    <span style="color: #4f97d7; font-weight: bold;">if</span>( count[i]%repeat != 0 ) {
+      result += (1&lt;&lt;i);
+    }
+  }
+  <span style="color: #4f97d7; font-weight: bold;">return</span> result;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33"><span class="section-number-3">1.12</span> Generate N number of which the sum is S</h3>
+<div class="outline-text-3" id="text-1-12">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">this function generates n random number</span>
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">to make them</span>
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">getRandomNum</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">start</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">end</span>)
+{
+  <span style="color: #a45bad;">std</span>::<span style="color: #ce537a; font-weight: bold;">set</span>&lt;<span style="color: #ce537a; font-weight: bold;">int</span>&gt; <span style="color: #7590db;">set_a</span>;
+  srand(time(<span style="color: #a45bad;">NULL</span>));
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=end-n; i&lt;end; i++ ) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">num</span> = (rand() % i) + start;
+    <span style="color: #4f97d7; font-weight: bold;">if</span>( set_a.find(num) == set_a.end() ) {
+      set_a.insert(num);
+    }
+    <span style="color: #4f97d7; font-weight: bold;">else</span> {
+      set_a.insert(i);
+    }
+  }
+  i = 0;
+  <span style="color: #a45bad;">std</span>::<span style="color: #a45bad;">set</span>&lt;<span style="color: #ce537a; font-weight: bold;">int</span>&gt;::<span style="color: #ce537a; font-weight: bold;">iterator</span> <span style="color: #7590db;">pos</span>;
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( pos=set_a.begin(); pos!=set_a.end(); pos++ ) {
+    a[i++] = *pos;
+  }
+}
+
+<span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">generateNum</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">sum</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">count</span>) {
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[count], <span style="color: #7590db;">result</span>[count];
+  getRandomNum(a, count-1, 0, sum);
+  sort(a, a+count-1);
+  a[count] = sum;
+  <span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0; i&lt;count; i++ ) {
+    result[i] = a[i] - a[i-1];
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline34" class="outline-3">
+<h3 id="orgheadline34"><span class="section-number-3">1.13</span> Find a number in an array, the difference of two neighbor in this array is 1</h3>
+<div class="outline-text-3" id="text-1-13">
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">findNum</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span>[], <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">y</span>)
+{
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">index</span> = abs(y-a[0]);
+  <span style="color: #4f97d7; font-weight: bold;">while</span>( index&lt;n ) {
+    <span style="color: #4f97d7; font-weight: bold;">if</span>( a[index] == y ) {
+      <span style="color: #4f97d7; font-weight: bold;">return</span> index;
+    }
+    <span style="color: #4f97d7; font-weight: bold;">else</span> {
+      index += abs(y-index);
+    }
+  }
+  <span style="color: #4f97d7; font-weight: bold;">return</span> -1;
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline36" class="outline-2">
+<h2 id="orgheadline36"><span class="section-number-2">2</span> Document Distance</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Angle of two document vector, each dimention is a word so the distance of two
+document of the inner product of two document:
+</p>
+\begin{split}
+D[w]&=\#\ of\ w\ in\ D\\
+d'(D_{1},D_{2})&=D_{1} \cdot D_{2}\\
+&=\sum_{w}{D_{1}[w] \cdot D_{2}[w]}\\
+d''(D_{1},\ D_{2})&=\frac{d'(D_{1},\ D_{2})}{||D_{1}|| \cdot ||D_{2}||}\\
+d(D_{1},\ D_{2})&=\arccos{d''(D_{1},\ D_{2})}
+\end{split}
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Zhihao Wang</p>
+<p class="date">Created: 2016-09-02 周五 15:49</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

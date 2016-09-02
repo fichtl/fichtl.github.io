@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-09-02 周五 15:49 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>LaTeX</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Zhihao Wang" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">LaTeX</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline14">1. Basic</a></li>
+<li><a href="#orgheadline21">2. Typesetting</a></li>
+<li><a href="#orgheadline23">3. Notes</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-2">
+<h2 id="orgheadline14"><span class="section-number-2">1</span> Basic</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">1.1</span> Source</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Coded with plain text
+</p>
+</div>
+
+<div id="outline-container-orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> Blank</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ol class="org-ol">
+<li>More than one whitespaces is regarded as one</li>
+<li>Same as the blank line</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-4">
+<h4 id="orgheadline2"><span class="section-number-4">1.1.2</span> Special Characters</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Some characters are reserved for special usage
+</p>
+<pre class="example">
+# $ % ^ &amp; _ { } ~ \
+</pre>
+<blockquote>
+<p>
+while you can use <code>\</code> to excape them<br  />
+we cannot use <code>\\</code> to excape <code>\</code> because they are line breaker<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-4">
+<h4 id="orgheadline3"><span class="section-number-4">1.1.3</span> LaTeX commands</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Commands are case sensitive
+</p>
+<ol class="org-ol">
+<li>started with <code>\</code>, followed by commands, ended by whitespace, digit or
+other non-alphabetic characters</li>
+<li>one <code>\</code> and a special character</li>
+</ol>
+<blockquote>
+<p>
+LaTeX will ignore the whitespace after the command<br  />
+If you want it, use <code>{}</code> and whitespace after the command<br  />
+Or just use a special whitespace command
+</p>
+</blockquote>
+<p>
+See more commands <a href="#cmd-tbl">below</a>
+</p>
+
+<p>
+Many commands need parameters enclosed by <code>{}</code> (some by <code>[]</code>)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><span class="section-number-4">1.1.4</span> Comments</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Follows special character <code>%</code>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">1.2</span> Structure</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Each LaTeX document must start with
+</p>
+<pre class="example">
+\documentclass{...}
+</pre>
+<p>
+then we can add some document control settings, like
+</p>
+<pre class="example">
+\usepackage{...}
+</pre>
+<p>
+After all the settings are done, start the document with
+</p>
+<pre class="example">
+\begin{document}
+</pre>
+<p>
+and end the document with
+</p>
+<pre class="example">
+\end{document}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">1.3</span> A classic process</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+A simple example source code of LaTeX
+A complicated example:
+</p>
+<ol class="org-ol">
+<li>Create <code>.tex</code> file (<b>must</b> encoded by ASCII)</li>
+<li><p>
+use <code>latex</code> to compile <code>.tex</code> file
+</p>
+<pre class="example">
+latex foo.tex
+</pre></li>
+<li><p>
+preview the <code>.dvi</code> file
+</p>
+<pre class="example">
+xdvi foo.dvi
+</pre>
+<p>
+or transform this to a <code>.ps</code> file
+</p>
+<pre class="example">
+dvips -Pcmz foo.dvi -o foo.ps
+</pre></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">1.4</span> Document layout</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">1.4.1</span> documentclass</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+To set the document class: <code>\documentclass[options]{class}</code><br  />
+For example:
+</p>
+<pre class="example">
+\documentclass[11pt, twoside, a4paper]{article}
+</pre>
+<p>
+Classes:
+</p>
+<ol class="org-ol">
+<li>article: for magazines, short reports, technique documents, so on</li>
+<li>report: for multi-charpter reports, short books, thesis</li>
+<li>book: for books</li>
+<li>slides: use it like ppt</li>
+</ol>
+
+<p>
+Options:
+</p>
+<ol class="org-ol">
+<li><code>10pt, 11pt, 12pt</code>: use 10pt by default</li>
+<li><code>a4paper, letterpaper, ...</code>: size of paper</li>
+<li><code>fleqn</code>: Equations will be aligned to the left</li>
+<li><code>leqno</code>: Equations with its number</li>
+<li><code>titlepage, notitlepage</code>: start a new page or not, not by default</li>
+<li><code>onecolumn, twocolumn</code>: one column or two column in one page</li>
+<li><code>twoside, oneside</code>: one side of page or two</li>
+<li><code>openright, openany</code>: new chapter will be presented at single page, or
+next page available</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">1.4.2</span> macro package</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+To use a macro package: <code>\usepackage[options]{package}</code><br  />
+Some packages:
+</p>
+<ol class="org-ol">
+<li><code>normalfontdoc</code>: organize LaTeX documents (see <code>doc.dtx</code>)</li>
+<li><code>exscale</code>: provide scalable math font (see <code>ltexscale.dtx</code>)</li>
+<li><code>normalfontfontenc</code>: declare font encoding of LaTeX (see <code>ltoutenc.dtx</code>)</li>
+<li><code>ifthen</code>: provide <code>if...then do...otherwise do...</code> cmd (see <code>ifthen.dtx</code>)</li>
+<li><code>latexsym</code>: provide <code>LaTeX</code> symbol in document (see <code>latexsym.dtx</code>)</li>
+<li><code>makeidx</code>: provide cmd of generating index</li>
+<li><code>syntonly</code>: just handle document, no typesetting</li>
+<li><p>
+<code>inputenc</code>: allow declaration of input encoding like
+</p>
+<pre class="example">
+ASCII, ISO Latin-1, ISO Latin-2, 437/850, IBM, Apple Macintosh, so on.
+</pre></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">1.5</span> File type</h3>
+<div class="outline-text-3" id="text-1-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> File type</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">extension</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>.tex</code></td>
+<td class="org-left">source file</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.sty</code></td>
+<td class="org-left">macro package</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.dtx</code></td>
+<td class="org-left">documentary TeX file, used for describing the macro package</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.ins</code></td>
+<td class="org-left">installation file for relavant <code>.dtx</code> file</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.dvi</code></td>
+<td class="org-left">device independent format file, used for previewing</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.log</code></td>
+<td class="org-left">information for last compiling</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.toc</code></td>
+<td class="org-left">table of contents, used for next compilation</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.lof</code></td>
+<td class="org-left">graphic toc</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.lot</code></td>
+<td class="org-left">form like toc</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.aux</code></td>
+<td class="org-left">another file for next compilation</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.idx</code></td>
+<td class="org-left">index, need <code>\makeindex</code> to handle</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.ilg</code></td>
+<td class="org-left">log file when using <code>\makeindex</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>.ind</code></td>
+<td class="org-left">after <code>.idx</code> been handled, used for next compilation</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-4">
+<h4 id="orgheadline11"><span class="section-number-4">1.5.1</span> Page Style</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+Pre-defined format for page header or footer
+</p>
+<pre class="example">
+\pagestyle{style}
+</pre>
+<p>
+Styles:
+</p>
+<ol class="org-ol">
+<li><code>plain</code>: no header, footer is page number (at the center) (default)</li>
+<li><code>headings</code>: header is page number and chapter name (at the center), no
+footer</li>
+<li><code>empty</code>: no header, no footer</li>
+</ol>
+<p>
+use <code>\thispagestyle{style}</code> to change current page style
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">1.6</span> Large document</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+When handling large document, best divide it into a few parts<br  />
+use <code>\include{filename}</code> to include <code>filename.tex</code> file (<b>opening a new page</b>)
+</p>
+<blockquote>
+<p>
+<code>\includeonly{filename,filename,...}</code> to restrict filename
+</p>
+</blockquote>
+
+<p>
+use <code>syntonly</code> package to check syntax error without typesetting
+</p>
+<pre class="example">
+\usepackage{syntonly}
+\syntaxonly
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline21" class="outline-2">
+<h2 id="orgheadline21"><span class="section-number-2">2</span> Typesetting</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15"><span class="section-number-3">2.1</span> Document structure</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Paragraph is for coherence thoughts<br  />
+Use <code>\\</code> or blank line well
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">2.2</span> Line breaks and pages</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">2.2.1</span> Paragraph</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ol class="org-ol">
+<li><code>\\</code> or <code>\newline</code>: new line</li>
+<li><code>\\*</code>: break line, no paging</li>
+<li><code>\newpage</code>: new page</li>
+<li><code>\linebreak[n], \nolinebreak[n], \pagebreak[n], \nopagebreak[n]</code></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">2.2.2</span> Cutting words</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ol class="org-ol">
+<li><code>\hyphenation{word list}</code>: make target word been cut at the given position</li>
+<li><code>\mbox{text}</code>: keep text in one line</li>
+<li><code>\fbox{text}</code>: like <code>\mbox</code>, with a frame</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">2.2.3</span> String</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Example</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>\today</code></td>
+<td class="org-left">20th October 2015</td>
+<td class="org-left">current date in the current language</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\TeX</code></td>
+<td class="org-left">TEX</td>
+<td class="org-left">name of your favorite typesetter</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\LaTeX</code></td>
+<td class="org-left">LaTeX</td>
+<td class="org-left">name of the game</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\LaTeXe</code></td>
+<td class="org-left">LaTeX 2e</td>
+<td class="org-left">current incarnation of LaTeX</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19"><span class="section-number-4">2.2.4</span> Special characters</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<ol class="org-ol">
+<li>Quote: use two single quote to generate a double quote, <b>don't use</b> double quote</li>
+<li>Dash: four places to use <code>-</code>:
+<ol class="org-ol">
+<li>one <code>-</code>: hyphen</li>
+<li>two <code>-</code>: short dash</li>
+<li>three <code>-</code>: long dash</li>
+<li>in equation: minus</li>
+</ol></li>
+<li>Wave: <code>\~</code> (small) or <code>\sim</code> (big)</li>
+<li>Degree: <code>^{\circ}</code></li>
+<li>Ellipsis: <code>\ldots</code></li>
+<li>Split two <b>char</b>: <code>\mbox{}</code> to split two char</li>
+<li>Phonetic notation and special character<br  />
+(Well I don't think I will use these)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline23" class="outline-2">
+<h2 id="orgheadline23"><span class="section-number-2">3</span> Notes</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="cmd-tbl"><a id="orgheadline22"></a><span class="section-number-3">3.1</span> Commands Table</h3>
+<div class="outline-text-3" id="text-cmd-tbl">
+<table id="orgtable1" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" align="center">
+<caption class="t-above"><span class="table-number">Table 2:</span> Commands Table</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Cmd</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>\TeX</code></td>
+<td class="org-left">print special string 'TeX'</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\today</code></td>
+<td class="org-left">print today's Date</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Use <code>$\backslash$</code> to generate <code>\</code>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Zhihao Wang</p>
+<p class="date">Created: 2016-09-02 周五 15:49</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

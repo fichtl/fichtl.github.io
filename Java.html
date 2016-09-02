@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-09-02 周五 15:49 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java</title>
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Java</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline4">1. Code Blocks</a>
+<ul>
+<li><a href="#orgheadline1">1.1. Intensed <i>for</i> circle</a></li>
+<li><a href="#orgheadline2">1.2. Single Instance Design Model</a></li>
+<li><a href="#orgheadline3">1.3. To be converted</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline40">2. Notes</a>
+<ul>
+<li><a href="#orgheadline5">2.1. Variable with <b>float point</b> and no sign would be <b><b>double</b></b> type by default</a></li>
+<li><a href="#orgheadline6">2.2. Some packages that are often used</a></li>
+<li><a href="#orgheadline7">2.3. <code>import</code></a></li>
+<li><a href="#orgheadline11">2.4. Comparison of <code>String</code> , <code>StringBuffer</code> and <code>StringBuilder</code></a>
+<ul>
+<li><a href="#orgheadline8">2.4.1. Thread Safety</a></li>
+<li><a href="#orgheadline9">2.4.2. Speed</a></li>
+<li><a href="#orgheadline10">2.4.3. Usage</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline12">2.5. Structure Code Block</a></li>
+<li><a href="#orgheadline18">2.6. 内存相关</a>
+<ul>
+<li><a href="#orgheadline13">2.6.1. JVM内存划分</a></li>
+<li><a href="#orgheadline14">2.6.2. 栈(stack)内存</a></li>
+<li><a href="#orgheadline15">2.6.3. 堆(heap)内存</a></li>
+<li><a href="#orgheadline16">2.6.4. Java对每个变量都会进行初始化， 同时存在垃圾回收机制</a></li>
+<li><a href="#orgheadline17">2.6.5. <code>String.equals("targetString")</code> 比较的两个String的内容， <code>==</code> 比较的是两者的地址</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline39">2.7. Pratices for coding with Java</a>
+<ul>
+<li><a href="#orgheadline19">2.7.1. Prefer returning <b>Empty</b> Collection instead of <b>Null</b> elements</a></li>
+<li><a href="#orgheadline20">2.7.2. Use Strings carefully</a></li>
+<li><a href="#orgheadline21">2.7.3. Avoid unnecessary Objects</a></li>
+<li><a href="#orgheadline22">2.7.4. Dilemma between Array and ArrayList</a></li>
+<li><a href="#orgheadline23">2.7.5. When Finally does not get executed with <code>try</code></a></li>
+<li><a href="#orgheadline24">2.7.6. Check Oddity</a></li>
+<li><a href="#orgheadline25">2.7.7. <code>double</code> or <code>float</code></a></li>
+<li><a href="#orgheadline28">2.7.8. Exponentiation</a>
+<ul>
+<li><a href="#orgheadline26">2.7.8.1. by product</a></li>
+<li><a href="#orgheadline27">2.7.8.2. by pow()</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline29">2.7.9. Executing shell command with Java</a></li>
+<li><a href="#orgheadline30">2.7.10. An example of <code>Java Swing</code></a></li>
+<li><a href="#orgheadline31">2.7.11. Play a sound with Java</a></li>
+<li><a href="#orgheadline32">2.7.12. PDF Export</a></li>
+<li><a href="#orgheadline33">2.7.13. Sending Email from Java Code</a></li>
+<li><a href="#orgheadline34">2.7.14. Measuring time</a></li>
+<li><a href="#orgheadline35">2.7.15. Rescale Image</a></li>
+<li><a href="#orgheadline36">2.7.16. Capturing Mouse Hover Coordinates</a></li>
+<li><a href="#orgheadline37">2.7.17. FileOutputStream vs. FileWriter</a></li>
+<li><a href="#orgheadline38">2.7.18. SOLID Class Design Principles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline45">3. Keyword</a>
+<ul>
+<li><a href="#orgheadline41">3.1. this</a></li>
+<li><a href="#orgheadline43">3.2. static</a>
+<ul>
+<li><a href="#orgheadline42">3.2.1. Static Code Block</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline44">3.3. Extends</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><span class="section-number-2">1</span> Code Blocks</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> Intensed <i>for</i> circle</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">module</span>
+<span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">arrayType</span> <span style="color: #7590db;">varName</span> : arrayName ) {
+    <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">some code</span>
+}
+
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">it would execute 'x = arrayDemo[i]' for each circle</span>
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">arrayDemo</span>[] = {1, 2, 4, 7, 9, 192, 100};
+<span style="color: #4f97d7; font-weight: bold;">for</span>( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">x</span> : arrayDemo ) {
+    System.out.println(x + <span style="color: #2d9574;">", "</span>);
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> Single Instance Design Model</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #2aa1ae;">/**</span>
+<span style="color: #2aa1ae;"> *   Two ways to make this class be created only once in memory</span>
+<span style="color: #2aa1ae;"> */</span>
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">hungry: create the instance when the class is initialized</span>
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Single</span> {
+    <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">First, privatization</span>
+    <span style="color: #4f97d7; font-weight: bold;">private</span> <span style="color: #bc6ec5; font-weight: bold;">Single</span>(){};
+    <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Second, create one specific instance to make this class available</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">The instance has to be single so that getInstance method could visit</span>
+    <span style="color: #4f97d7; font-weight: bold;">private</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">Single</span> <span style="color: #7590db;">s</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Single</span>();
+    <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Provide the method that others could get this instance</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">Single</span> <span style="color: #bc6ec5; font-weight: bold;">getInstance</span>() {
+        <span style="color: #4f97d7; font-weight: bold;">return</span> s;
+    }
+}
+
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">lazy: create the instance when it is visited.(Not safe for multi-thread)</span>
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Single2</span> {
+    <span style="color: #4f97d7; font-weight: bold;">private</span> <span style="color: #bc6ec5; font-weight: bold;">Single2</span>(){};
+    <span style="color: #4f97d7; font-weight: bold;">private</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">Single2</span> <span style="color: #7590db;">s</span> = <span style="color: #a45bad;">null</span>;
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #bc6ec5; font-weight: bold;">getInstance</span>() {
+        <span style="color: #4f97d7; font-weight: bold;">if</span> (s == <span style="color: #a45bad;">null</span>) {
+            s = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Single2</span>();
+        }
+        <span style="color: #4f97d7; font-weight: bold;">return</span> s;
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> To be converted</h3>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline40" class="outline-2">
+<h2 id="orgheadline40"><span class="section-number-2">2</span> Notes</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">2.1</span> Variable with <b>float point</b> and no sign would be <b><b>double</b></b> type by default</h3>
+</div>
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">2.2</span> Some packages that are often used</h3>
+<div class="outline-text-3" id="text-2-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>java.lang</code></td>
+<td class="org-left">Include basic java classes, such as Object,Main,String,StringBuffer,System,Thread</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>java.util</code></td>
+<td class="org-left">Include set frame, event module, date and time, international and many usable tools</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>java.io</code></td>
+<td class="org-left">Use file system, data stream and serialize to provide input and output operation for system</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>java.net</code></td>
+<td class="org-left">Provide classes for development and implement of net</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>java.sql</code></td>
+<td class="org-left">Provide Java APIs of visiting and dealing data in data source(usually relational database)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>java.awt, javax.swing</code></td>
+<td class="org-left">These two provide classes about the design and development of GUI. Java.awt provide all the classes of creating UI and generating images, while javax.swing provide a set of "light weight" frames trying to make these frames work in the same way</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>java.text</code></td>
+<td class="org-left">Provide classes and interfaces that deal with text, date, number and message in ways that have no business with natural langurage</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">2.3</span> <code>import</code></h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>One source file can declare only one public class and many not public classes</li>
+<li>Public class should have same name with source file</li>
+<li><code>package</code> should at the top of the source file</li>
+<li><code>import</code> should follow after <code>package</code></li>
+<li><code>import</code> and <code>package</code> is available for all classes in source file</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">2.4</span> Comparison of <code>String</code> , <code>StringBuffer</code> and <code>StringBuilder</code></h3>
+<div class="outline-text-3" id="text-2-4">
+</div><div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">2.4.1</span> Thread Safety</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ul class="org-ul">
+<li>StringBuffer: safe</li>
+<li>StringBuilder: not safe</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">2.4.2</span> Speed</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<p>
+Usually StringBuilder &gt; StringBuffer &gt; String(from fast to slow), not absolutely
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">2.4.3</span> Usage</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<ul class="org-ul">
+<li>Few operation using String</li>
+<li>Single thread using String Builder</li>
+<li>Multithread using StringBuffer</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">2.5</span> Structure Code Block</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">structureDemo</span> {
+    {
+        System.out.println(<span style="color: #2d9574;">"This is a structure code."</span>);
+    }
+    structureDemo();
+}
+</pre>
+</div>
+<p>
+It would be loaded when an object is created.<br  />
+Define some features all these object have while structure method can initialize those spetial features.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">2.6</span> 内存相关</h3>
+<div class="outline-text-3" id="text-2-6">
+</div><div id="outline-container-orgheadline13" class="outline-4">
+<h4 id="orgheadline13"><span class="section-number-4">2.6.1</span> JVM内存划分</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<ol class="org-ol">
+<li>寄存器</li>
+<li>本地方法区</li>
+<li>方法区</li>
+<li>栈内存</li>
+<li>堆内存</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">2.6.2</span> 栈(stack)内存</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<p>
+存储局部变量， 方法(Method)变量都是局部变量(因此加载局部变量的时候一定加载了对应的方法)， 作用域一旦结束就会释放内存
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15"><span class="section-number-4">2.6.3</span> 堆(heap)内存</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<p>
+存储对象(凡是new建立的， 都在堆中)， 每个实体都有首地址， 例如:
+堆中的数组变量保存的是数组的首地址
+</p>
+<pre class="example">
+print (Object) --&gt; type@hashcode` (@左边代表实体的类型， 右边为hashcode)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">2.6.4</span> Java对每个变量都会进行初始化， 同时存在垃圾回收机制</h4>
+</div>
+<div id="outline-container-orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">2.6.5</span> <code>String.equals("targetString")</code> 比较的两个String的内容， <code>==</code> 比较的是两者的地址</h4>
+</div>
+</div>
+
+<div id="outline-container-orgheadline39" class="outline-3">
+<h3 id="orgheadline39"><span class="section-number-3">2.7</span> Pratices for coding with Java</h3>
+<div class="outline-text-3" id="text-2-7">
+</div><div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19"><span class="section-number-4">2.7.1</span> Prefer returning <b>Empty</b> Collection instead of <b>Null</b> elements</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">getLocationName</span> {
+    <span style="color: #4f97d7; font-weight: bold;">return</span> (<span style="color: #a45bad;">null</span>==cityName ? <span style="color: #2d9574;">""</span> : cityName);
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline20" class="outline-4">
+<h4 id="orgheadline20"><span class="section-number-4">2.7.2</span> Use Strings carefully</h4>
+<div class="outline-text-4" id="text-2-7-2">
+<ol class="org-ol">
+<li>If two Strings are concatenated using "+" operator in a "for" loop, then it creates a new String Object every time</li>
+<li>While instantiating a String Object, constructors should be avoided and instantiation should happen directly</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Slower Instantiation</span>
+<span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">bad</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">String</span>(<span style="color: #2d9574;">"Yet another string object"</span>);
+
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Faster Instantiation</span>
+<span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">good</span> = <span style="color: #2d9574;">"Yet another string object"</span>;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline21" class="outline-4">
+<h4 id="orgheadline21"><span class="section-number-4">2.7.3</span> Avoid unnecessary Objects</h4>
+<div class="outline-text-4" id="text-2-7-3">
+<ol class="org-ol">
+<li>One of the most expensive operations (in terms of Memory Utilization) in Java is Object Creation</li>
+<li>It is recommended that Objects should only be created or initialized if necessary</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">util</span>.<span style="color: #ce537a; font-weight: bold;">ArrayList</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">util</span>.<span style="color: #ce537a; font-weight: bold;">List</span>;
+
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Employees</span> {
+    <span style="color: #4f97d7; font-weight: bold;">private</span> <span style="color: #ce537a; font-weight: bold;">List</span> <span style="color: #7590db;">Employees</span>;
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">List</span> <span style="color: #bc6ec5; font-weight: bold;">getEmployees</span>() {
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">initialize only when required</span>
+        <span style="color: #4f97d7; font-weight: bold;">if</span>(<span style="color: #a45bad;">null</span> == Employees) {
+            Employees = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">ArrayList</span>();
+        }
+        <span style="color: #4f97d7; font-weight: bold;">return</span> Employees;
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline22" class="outline-4">
+<h4 id="orgheadline22"><span class="section-number-4">2.7.4</span> Dilemma between Array and ArrayList</h4>
+<div class="outline-text-4" id="text-2-7-4">
+<p>
+Choice depends on the requirements
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">util</span>.<span style="color: #ce537a; font-weight: bold;">ArrayList</span>;
+
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">arrayVsArrayList</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
+        <span style="color: #ce537a; font-weight: bold;">int</span>[] <span style="color: #7590db;">myArray</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">int</span>[6];
+        myArray[7] = 10;        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">ArraysOutOfBoundException</span>
+
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Declaration of ArrayList. Add and Remove of elements is easy</span>
+        <span style="color: #ce537a; font-weight: bold;">ArrayList</span>&lt;<span style="color: #ce537a; font-weight: bold;">Integer</span>&gt; <span style="color: #7590db;">myArrayList</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">ArrayList</span>&lt;&gt;();
+        myArrayList.add(1);
+        myArrayList.add(2);
+        myArrayList.add(3);
+        myArrayList.add(4);
+        myArrayList.add(5);
+        myArrayList.remove(0);
+
+        <span style="color: #4f97d7; font-weight: bold;">for</span> (<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0; i&lt;myArrayList.<span style="color: #ce537a; font-weight: bold;">size</span>(); i++) {
+            System.out.println(<span style="color: #2d9574;">"Element: "</span> + myArrayList.get(i));
+        }
+
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Multi-dimentional Array</span>
+        <span style="color: #ce537a; font-weight: bold;">int</span>[][][] <span style="color: #7590db;">multiArray</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">int</span>[3][3][3];
+    }
+}
+</pre>
+</div>
+<ol class="org-ol">
+<li>Arrays have fixed size but ArrayLists have variable sizes</li>
+<li>So arrays are <b>faster</b>, but <b>less flexible</b></li>
+<li>Easier to add or remove element from ArrayLists</li>
+<li>Array can be <b>multi-dimentional</b></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline23" class="outline-4">
+<h4 id="orgheadline23"><span class="section-number-4">2.7.5</span> When Finally does not get executed with <code>try</code></h4>
+<div class="outline-text-4" id="text-2-7-5">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">shutDownHooksDemo</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
+        <span style="color: #4f97d7; font-weight: bold;">for</span> ( <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0; i&lt;5; i++ ) {
+            <span style="color: #4f97d7; font-weight: bold;">try</span> {
+                <span style="color: #4f97d7; font-weight: bold;">if</span> ( i==4 ) {
+                    System.out.println(<span style="color: #2d9574;">"Inside try block. Exiting without executing finally block."</span>);
+                    System.exit(0);
+                }
+            }
+            <span style="color: #4f97d7; font-weight: bold;">finally</span> {
+                System.out.println(<span style="color: #2d9574;">"Inside finally blocks."</span>);
+            }
+        }
+    }
+}
+</pre>
+</div>
+<p>
+Because <code>System.exit</code> halts execution of all the running threads <b>including the current one</b>
+</p>
+<blockquote>
+<p>
+When <code>System.exit</code> is called, JVM performs two cleanup tasks before shut
+down:
+</p>
+<ol class="org-ol">
+<li>First, executes all the shutdown hooks which have been registered with
+<code>Runtime.addShutdownHooks</code></li>
+<li>Second, is related to Finalizers. Either <code>System.runFinalizersOnExit</code> or
+<code>Runtime.runFinalizersOnExit</code><br  />
+Finalizers can run on live objects while they are being manipulated by
+other threads</li>
+</ol>
+</blockquote>
+<p>
+The second may results in undesirable results or even in a deadlock:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">shutDownHooksDemo</span> {
+  <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
+     <span style="color: #4f97d7; font-weight: bold;">for</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>=0;i&lt;5;i++) {
+       <span style="color: #4f97d7; font-weight: bold;">final</span> <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">final_i</span> = i;
+       <span style="color: #4f97d7; font-weight: bold;">try</span> {
+         Runtime.getRuntime().addShutdownHook(
+             <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Thread</span>() {
+               <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">run</span>() {
+                 <span style="color: #4f97d7; font-weight: bold;">if</span> ( final_i == 4 ) {
+                   System.out.println(<span style="color: #2d9574;">"Inside Try Block. Exiting without executing Finally Block."</span>);
+                   System.exit(0);
+                 }
+               }
+             });
+       }
+       <span style="color: #4f97d7; font-weight: bold;">finally</span> {
+         System.out.println(<span style="color: #2d9574;">"Inside Finally Block."</span>);
+       }
+     }
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline24" class="outline-4">
+<h4 id="orgheadline24"><span class="section-number-4">2.7.6</span> Check Oddity</h4>
+<div class="outline-text-4" id="text-2-7-6">
+<p>
+This:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">boolean</span> <span style="color: #bc6ec5; font-weight: bold;">oddOrNot</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">num</span>) {
+    <span style="color: #4f97d7; font-weight: bold;">return</span> num % 2 == 1;
+}
+</pre>
+</div>
+<p>
+is not good! Because of minus number!
+</p>
+
+<p>
+We need this:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">boolean</span> <span style="color: #bc6ec5; font-weight: bold;">oddOrNot</span>(<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">num</span>) {
+    <span style="color: #4f97d7; font-weight: bold;">return</span> (num &amp; 1) != 0;
+}
+</pre>
+</div>
+<p>
+which is better, because arithmetic and boolean operation is more efficient and quicker.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline25" class="outline-4">
+<h4 id="orgheadline25"><span class="section-number-4">2.7.7</span> <code>double</code> or <code>float</code></h4>
+<div class="outline-text-4" id="text-2-7-7">
+<p>
+Most CPU takes nearly same time to handle <code>float</code> or <code>double</code> type variable,
+while <code>double</code> is more accurate
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline28" class="outline-4">
+<h4 id="orgheadline28"><span class="section-number-4">2.7.8</span> Exponentiation</h4>
+<div class="outline-text-4" id="text-2-7-8">
+</div><div id="outline-container-orgheadline26" class="outline-5">
+<h5 id="orgheadline26"><span class="section-number-5">2.7.8.1</span> by product</h5>
+<div class="outline-text-5" id="text-2-7-8-1">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">double</span> <span style="color: #7590db;">square</span> = <span style="color: #ce537a; font-weight: bold;">double</span> a * <span style="color: #ce537a; font-weight: bold;">double</span> a; <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">optimized</span>
+<span style="color: #ce537a; font-weight: bold;">double</span> <span style="color: #7590db;">cube</span> = <span style="color: #ce537a; font-weight: bold;">double</span> a * <span style="color: #ce537a; font-weight: bold;">double</span> a * <span style="color: #ce537a; font-weight: bold;">double</span> a; <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">not optimized</span>
+<span style="color: #ce537a; font-weight: bold;">double</span> <span style="color: #7590db;">cube</span> = <span style="color: #ce537a; font-weight: bold;">double</span> a * <span style="color: #ce537a; font-weight: bold;">double</span> square;       <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">optimized</span>
+<span style="color: #ce537a; font-weight: bold;">double</span> <span style="color: #7590db;">quad</span> = <span style="color: #ce537a; font-weight: bold;">double</span> a * <span style="color: #ce537a; font-weight: bold;">double</span> a * <span style="color: #ce537a; font-weight: bold;">double</span> a * <span style="color: #ce537a; font-weight: bold;">double</span> a; <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">not optimized</span>
+<span style="color: #ce537a; font-weight: bold;">double</span> <span style="color: #7590db;">quad</span> = <span style="color: #ce537a; font-weight: bold;">double</span> square * <span style="color: #ce537a; font-weight: bold;">double</span> square;             <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">optimized</span>
+</pre>
+</div>
+<p>
+Briefly speaking, <b>binary operation</b> is optimized!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline27" class="outline-5">
+<h5 id="orgheadline27"><span class="section-number-5">2.7.8.2</span> by pow()</h5>
+<div class="outline-text-5" id="text-2-7-8-2">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">double</span> <span style="color: #7590db;">cube</span> = Math.pow(base, exponent);
+</pre>
+</div>
+<p>
+Better not! Too slow.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">2.7.9</span> Executing shell command with Java</h4>
+<div class="outline-text-4" id="text-2-7-9">
+<p>
+Java provide a class named <code>Runtime</code> to execute shell command
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">io</span>.<span style="color: #ce537a; font-weight: bold;">BufferedReader</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">io</span>.<span style="color: #ce537a; font-weight: bold;">InputStream</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">io</span>.<span style="color: #ce537a; font-weight: bold;">InputStreamReader</span>;
+
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">ShellCommandExec</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">gnomeOpenCommand</span> = <span style="color: #2d9574;">"gnome-open //home//user//Documents//MyDoc.pdf"</span>;
+
+        <span style="color: #4f97d7; font-weight: bold;">try</span> {
+            <span style="color: #ce537a; font-weight: bold;">Runtime</span> <span style="color: #7590db;">rt</span> = Runtime.getRuntime();
+            <span style="color: #ce537a; font-weight: bold;">Process</span> <span style="color: #7590db;">processObj</span> = rt.exec(gnomeOpenCommand);
+
+            <span style="color: #ce537a; font-weight: bold;">InputStream</span> <span style="color: #7590db;">stdin</span> = processObj.getErrorStream();
+            <span style="color: #ce537a; font-weight: bold;">InputStreamReader</span> <span style="color: #7590db;">isr</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">InputStreamReader</span>(stdin);
+            <span style="color: #ce537a; font-weight: bold;">BufferedReader</span> <span style="color: #7590db;">br</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">BufferedReader</span>(isr);
+
+            <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">myoutput</span> = <span style="color: #2d9574;">""</span>;
+
+            <span style="color: #4f97d7; font-weight: bold;">while</span> ((myoutput=br.readLine()) != <span style="color: #a45bad;">null</span>) {
+                myoutput = myoutput+<span style="color: #2d9574;">"</span><span style="color: #2d9574; font-weight: bold;">\</span><span style="color: #2d9574; font-weight: bold;">n</span><span style="color: #2d9574;">"</span>;
+            }
+            System.out.println(myoutput);
+        }
+        <span style="color: #4f97d7; font-weight: bold;">catch</span> (<span style="color: #ce537a; font-weight: bold;">Exception</span> <span style="color: #7590db;">e</span>) {
+            e.printStackTrace();
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">2.7.10</span> An example of <code>Java Swing</code></h4>
+<div class="outline-text-4" id="text-2-7-10">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">awt</span>.*;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">javax</span>.<span style="color: #a45bad;">swing</span>.*;
+
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">SwingsDemo</span> <span style="color: #4f97d7; font-weight: bold;">extends</span> <span style="color: #ce537a; font-weight: bold;">JFrame</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #bc6ec5; font-weight: bold;">SwingsDemo</span>() {
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">path</span> = <span style="color: #2d9574;">"//home//user//Documents//images"</span>;
+        <span style="color: #ce537a; font-weight: bold;">Container</span> <span style="color: #7590db;">contentPane</span> = getContentPane();
+        contentPane.setLayout(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">FlowLayout</span>());
+
+        <span style="color: #ce537a; font-weight: bold;">Box</span> <span style="color: #7590db;">myHorizontalBox</span> = Box.createHorizontalBox();
+        <span style="color: #ce537a; font-weight: bold;">Box</span> <span style="color: #7590db;">myVertialBox</span> = Box.createVerticalBox();
+
+        myHorizontalBox.add(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">JButton</span>(<span style="color: #2d9574;">"My Button 1"</span>));
+        myHorizontalBox.add(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">JButton</span>(<span style="color: #2d9574;">"My Button 2"</span>));
+        myHorizontalBox.add(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">JButton</span>(<span style="color: #2d9574;">"My Button</span><span style="color: #ce537a; font-weight: bold;"> 3"));</span>
+
+<span style="color: #ce537a; font-weight: bold;">      </span>  myVertialBox.add(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">JButton</span>(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">ImageIcon</span>(path+<span style="color: #2d9574;">"//Image1.jpg"</span>)));
+        myVertialBox.add(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">JButton</span>(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">ImageIcon</span>(path+<span style="color: #2d9574;">"//Image2.jpg"</span>)));
+        myVertialBox.add(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">JButton</span>(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">ImageIcon</span>(path+<span style="color: #2d9574;">"//Image3.jpg"</span>)));
+
+        contentPane.add(myHorizontalBox);
+        contentPane.add(myVertialBox);
+
+        pack();
+        setVisible(<span style="color: #a45bad;">true</span>);
+    }
+
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
+        <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">SwingsDemo</span>();
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline31" class="outline-4">
+<h4 id="orgheadline31"><span class="section-number-4">2.7.11</span> Play a sound with Java</h4>
+<div class="outline-text-4" id="text-2-7-11">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">io</span>.*;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">net</span>.<span style="color: #ce537a; font-weight: bold;">URL</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">javax</span>.<span style="color: #a45bad;">sound</span>.<span style="color: #a45bad;">sampled</span>.*;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">javax</span>.<span style="color: #a45bad;">swing</span>.*;
+
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">To play sound using Clip, the process need to be alive.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Hence, we use a Swing application.</span>
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">playSoundDemo</span> <span style="color: #4f97d7; font-weight: bold;">extends</span> <span style="color: #ce537a; font-weight: bold;">JFrame</span> {
+
+    <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Constructor</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #bc6ec5; font-weight: bold;">playSoundDemo</span>() {
+        <span style="color: #4f97d7; font-weight: bold;">this</span>.setDefaultCloseOperation(<span style="color: #a45bad;">JFrame</span>.EXIT_ON_CLOSE);
+        <span style="color: #4f97d7; font-weight: bold;">this</span>.setTitle(<span style="color: #2d9574;">"Play Sound Demo"</span>);
+        <span style="color: #4f97d7; font-weight: bold;">this</span>.setSize(300, 200);
+        <span style="color: #4f97d7; font-weight: bold;">this</span>.setVisible(<span style="color: #a45bad;">true</span>);
+
+        <span style="color: #4f97d7; font-weight: bold;">try</span> {
+            <span style="color: #ce537a; font-weight: bold;">URL</span> <span style="color: #7590db;">url</span> = <span style="color: #4f97d7; font-weight: bold;">this</span>.getClass().getResource(<span style="color: #2d9574;">"MyAudio.wav"</span>);
+            <span style="color: #ce537a; font-weight: bold;">AudioInputStream</span> <span style="color: #7590db;">audioIn</span> = AudioSystem.getAudioInputStream(url);
+            <span style="color: #ce537a; font-weight: bold;">Clip</span> <span style="color: #7590db;">clip</span> = AudioSystem.getClip();
+            clip.open(audioIn);
+            clip.start();
+        } <span style="color: #4f97d7; font-weight: bold;">catch</span> (<span style="color: #ce537a; font-weight: bold;">UnsupportedAudioFileException</span> <span style="color: #7590db;">e</span>) {
+            e.printStackTrace();
+        } <span style="color: #4f97d7; font-weight: bold;">catch</span> (<span style="color: #ce537a; font-weight: bold;">IOException</span> <span style="color: #7590db;">e</span>) {
+            e.printStackTrace();
+        } <span style="color: #4f97d7; font-weight: bold;">catch</span> (<span style="color: #ce537a; font-weight: bold;">LineUnavailableException</span> <span style="color: #7590db;">e</span>) {
+            e.printStackTrace();
+        }
+    }
+
+  <span style="color: #ce537a; font-weight: bold;">  public s</span><span style="color: #4f97d7; font-weight: bold;">tatic</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
+        <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">playSoundDemo</span>();
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline32" class="outline-4">
+<h4 id="orgheadline32"><span class="section-number-4">2.7.12</span> PDF Export</h4>
+<div class="outline-text-4" id="text-2-7-12">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">io</span>.<span style="color: #ce537a; font-weight: bold;">FileOutputStream</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">com</span>.<span style="color: #a45bad;">itextpdf</span>.<span style="color: #a45bad;">text</span>.<span style="color: #ce537a; font-weight: bold;">Document</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">com</span>.<span style="color: #a45bad;">itextpdf</span>.<span style="color: #a45bad;">text</span>.<span style="color: #ce537a; font-weight: bold;">Paragraph</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">com</span>.<span style="color: #a45bad;">itextpdf</span>.<span style="color: #a45bad;">text</span>.<span style="color: #a45bad;">pdf</span>.<span style="color: #ce537a; font-weight: bold;">PdfPCell</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">com</span>.<span style="color: #a45bad;">itextpdf</span>.<span style="color: #a45bad;">text</span>.<span style="color: #a45bad;">pdf</span>.<span style="color: #ce537a; font-weight: bold;">PdfPTable</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">com</span>.<span style="color: #a45bad;">itextpdf</span>.<span style="color: #a45bad;">text</span>.<span style="color: #a45bad;">pdf</span>.<span style="color: #ce537a; font-weight: bold;">PdfWriter</span>;
+
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">DrawPdf</span> {
+
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) <span style="color: #4f97d7; font-weight: bold;">throws</span> <span style="color: #ce537a; font-weight: bold;">Exception</span> {
+      <span style="color: #ce537a; font-weight: bold;">Document</span> <span style="color: #7590db;">document</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Document</span>();
+      PdfWriter.getInstance(document, <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">FileOutputStream</span>(<span style="color: #2d9574;">"Employee.pdf"</span>));
+      document.open();
+
+      <span style="color: #ce537a; font-weight: bold;">Paragraph</span> <span style="color: #7590db;">para</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Paragraph</span>(<span style="color: #2d9574;">"Employee Table"</span>);
+      para.setSpacingAfter(20);
+      document.add(para);
+
+      <span style="color: #ce537a; font-weight: bold;">PdfPTable</span> <span style="color: #7590db;">table</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">PdfPTable</span>(3);
+      <span style="color: #ce537a; font-weight: bold;">PdfPCell</span> <span style="color: #7590db;">cell</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">PdfPCell</span>(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Paragraph</span>(<span style="color: #2d9574;">"First Name"</span>));
+
+      table.addCell(cell);
+      table.addCell(<span style="color: #2d9574;">"Last Name"</span>);
+      table.addCell(<span style="color: #2d9574;">"Gender"</span>);
+      table.addCell(<span style="color: #2d9574;">"Ram"</span>);
+      table.addCell(<span style="color: #2d9574;">"Kumar"</span>);
+      table.addCell(<span style="color: #2d9574;">"Male"</span>);
+      table.addCell(<span style="color: #2d9574;">"Lakshmi"</span>);
+      table.addCell(<span style="color: #2d9574;">"Devi"</span>);
+      table.addCell(<span style="color: #2d9574;">"Female"</span>);
+
+      document.add(table);
+
+      document.close();
+    }
+  }
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline33" class="outline-4">
+<h4 id="orgheadline33"><span class="section-number-4">2.7.13</span> Sending Email from Java Code</h4>
+<div class="outline-text-4" id="text-2-7-13">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">util</span>.*;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">javax</span>.<span style="color: #a45bad;">mail</span>.*;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">javax</span>.<span style="color: #a45bad;">mail</span>.<span style="color: #a45bad;">internet</span>.*;
+
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">SendEmail</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">to</span> = <span style="color: #2d9574;">"recipient@gmail.com"</span>;
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">from</span> = <span style="color: #2d9574;">"sender@gmail.com"</span>;
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">host</span> = <span style="color: #2d9574;">"localhost"</span>;
+
+        <span style="color: #ce537a; font-weight: bold;">Properties</span> <span style="color: #7590db;">properties</span> = System.getProperties();
+        properties.setProperty(<span style="color: #2d9574;">"mail.smtp.host"</span>, host);
+        <span style="color: #ce537a; font-weight: bold;">Session</span> <span style="color: #7590db;">session</span> = Session.getDefaultInstance(properties);
+
+        <span style="color: #4f97d7; font-weight: bold;">try</span> {
+            <span style="color: #ce537a; font-weight: bold;">MimeMessage</span> <span style="color: #7590db;">message</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">MimeMessage</span>(session);
+            message.setFrom(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">InternetAddress</span>(from));
+
+            message.addRecipient(<span style="color: #a45bad;">Message</span>.<span style="color: #a45bad;">RecipientType</span>.TO, <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">InternetAddress(to));</span>
+
+            message.setSubject(<span style="color: #2d9574;">"My Email Subject"</span>);
+            message.setText(<span style="color: #2d9574;">"My Message Body"</span>);
+            Transport.send(message);
+            System.out.println(<span style="color: #2d9574;">"Sent successfully!"</span>);
+        } <span style="color: #4f97d7; font-weight: bold;">catch</span> (<span style="color: #ce537a; font-weight: bold;">MessagingException</span> <span style="color: #7590db;">ex</span>) {
+            ex.<span style="color: #ce537a; font-weight: bold;">printStackTrace</span>();
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline34" class="outline-4">
+<h4 id="orgheadline34"><span class="section-number-4">2.7.14</span> Measuring time</h4>
+<div class="outline-text-4" id="text-2-7-14">
+<ol class="org-ol">
+<li><p>
+currentTimeMillis(): Returns current time in MilliSeconds since Epoch
+Time, in long
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #7590db;">startTime</span> = System.currentTimeMillis();
+<span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #7590db;">estimatedTime</span> = System.currentTimeMillis() - startTime;
+</pre>
+</div></li>
+<li><p>
+nanoTime(): Returns the current value of the most precise available system
+timer, in nanoseconds, in long
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #7590db;">startTime</span> = System.nanoTime();
+<span style="color: #ce537a; font-weight: bold;">long</span> <span style="color: #7590db;">estimatedTime</span> = System.nanoTime() - startTime;
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline35" class="outline-4">
+<h4 id="orgheadline35"><span class="section-number-4">2.7.15</span> Rescale Image</h4>
+<div class="outline-text-4" id="text-2-7-15">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">awt</span>.<span style="color: #ce537a; font-weight: bold;">Graphics2D</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">awt</span>.<span style="color: #a45bad;">geom</span>.<span style="color: #ce537a; font-weight: bold;">AffineTransform</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">awt</span>.<span style="color: #a45bad;">image</span>.<span style="color: #ce537a; font-weight: bold;">BufferedImage</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">io</span>.<span style="color: #ce537a; font-weight: bold;">File</span>;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">javax</span>.<span style="color: #a45bad;">imageio</span>.<span style="color: #ce537a; font-weight: bold;">ImageIO</span>;
+
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">RescaleImage</span> {
+  <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) <span style="color: #4f97d7; font-weight: bold;">throws</span> <span style="color: #ce537a; font-weight: bold;">Exception</span> {
+    <span style="color: #ce537a; font-weight: bold;">BufferedImage</span> <span style="color: #7590db;">imgSource</span> = ImageIO.read(<span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">File</span>(<span style="color: #2d9574;">"images//Image3.jpg"</span>));
+    <span style="color: #ce537a; font-weight: bold;">BufferedImage</span> <span style="color: #7590db;">imgDestination</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">BufferedImage</span>(100, 100, <span style="color: #a45bad;">BufferedImage</span>.TYPE_INT_RGB);
+    <span style="color: #ce537a; font-weight: bold;">Graphics2D</span> <span style="color: #7590db;">g</span> = imgDestination.createGraphics();
+    <span style="color: #ce537a; font-weight: bold;">AffineTransform</span> <span style="color: #7590db;">affinetransformation</span> = AffineTransform.getScaleInstance(2, 2);
+    g.drawRenderedImage(imgSource, affinetransformation);
+    ImageIO.write(imgDestination, <span style="color: #2d9574;">"JPG"</span>, <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">File</span>(<span style="color: #2d9574;">"outImage.jpg"</span>));
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline36" class="outline-4">
+<h4 id="orgheadline36"><span class="section-number-4">2.7.16</span> Capturing Mouse Hover Coordinates</h4>
+<div class="outline-text-4" id="text-2-7-16">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">awt</span>.<span style="color: #a45bad;">event</span>.*;
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">javax</span>.<span style="color: #a45bad;">swing</span>.*;
+
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">MouseCaptureDemo</span> <span style="color: #4f97d7; font-weight: bold;">extends</span> <span style="color: #ce537a; font-weight: bold;">JFrame</span> <span style="color: #4f97d7; font-weight: bold;">implements</span> <span style="color: #ce537a; font-weight: bold;">MouseMotionListener</span>
+{
+  <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">JLabel</span> <span style="color: #7590db;">mouseHoverStatus</span>;
+
+  <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">args</span>[])
+  {
+    <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">MouseCaptureDemo</span>();
+  }
+
+  <span style="color: #bc6ec5; font-weight: bold;">MouseCaptureDemo</span>()
+  {
+    setSize(500, 500);
+    setTitle(<span style="color: #2d9574;">"Frame displaying Coordinates of Mouse Motion"</span>);
+
+    mouseHoverStatus = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">JLabel</span>(<span style="color: #2d9574;">"No Mouse Hover Detected."</span>, <span style="color: #a45bad;">JLabel</span>.CENTER);
+    add(mouseHoverStatus);
+    addMouseMotionListener(<span style="color: #4f97d7; font-weight: bold;">this</span>);
+    setVisible(<span style="color: #a45bad;">true</span>);
+  }
+
+  <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">mouseMoved</span>(<span style="color: #ce537a; font-weight: bold;">MouseEvent</span> <span style="color: #7590db;">e</span>)
+  {
+    mouseHoverStatus.setText(<span style="color: #2d9574;">"Mouse Cursor Coordinates =&gt; X:"</span>+e.getX()+<span style="color: #2d9574;">" | Y:"</span>+e.getY());
+<span style="color: #ce537a; font-weight: bold;">  }</span>
+
+  <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">mouseDragged</span>(<span style="color: #ce537a; font-weight: bold;">MouseEvent</span> <span style="color: #7590db;">e</span>)
+  {}
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline37" class="outline-4">
+<h4 id="orgheadline37"><span class="section-number-4">2.7.17</span> FileOutputStream vs. FileWriter</h4>
+<div class="outline-text-4" id="text-2-7-17">
+<p>
+FileOutputStream:
+</p>
+<pre class="example">
+FileOutputStream fos = new FileOutputStream(new File(file_location_string);
+</pre>
+<p>
+FileWriter:
+</p>
+<pre class="example">
+FileWriter fw = new FileWriter(file_location_string);
+</pre>
+<p>
+This makes it pretty clear that for image type of Data FileOutputStream
+should be used and for Text type of data FileWriter should be used.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38"><span class="section-number-4">2.7.18</span> SOLID Class Design Principles</h4>
+<div class="outline-text-4" id="text-2-7-18">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Rule</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Single responsibility principle</td>
+<td class="org-left">A class should have one and only one task/responsibility. If class is performing more than one task, it leads to confusion.</td>
+</tr>
+
+<tr>
+<td class="org-left">Open/closed principle</td>
+<td class="org-left">The developers should focus more on extending the software entities rather than modifying them.</td>
+</tr>
+
+<tr>
+<td class="org-left">Liskov substitution principle</td>
+<td class="org-left">It should be possible to substitute the derived class with base class.</td>
+</tr>
+
+<tr>
+<td class="org-left">Interface segregation principle</td>
+<td class="org-left">It's like Single Responsibility Principle but applicable to interfaces. Each interface should be responsible for a specific task. The developers should need to implement methods which he/she doesn’t need.</td>
+</tr>
+
+<tr>
+<td class="org-left">Dependency inversion principle</td>
+<td class="org-left">Depend upon Abstractions- but not on concretions. This means that each module should be separated from other using an abstract layer which binds them together.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline45" class="outline-2">
+<h2 id="orgheadline45"><span class="section-number-2">3</span> Keyword</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgheadline41" class="outline-3">
+<h3 id="orgheadline41"><span class="section-number-3">3.1</span> this</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<code>this</code> 代表所属的当前 <b>对象(Object)</b> (保存了该对象的地址)
+</p>
+
+<blockquote>
+<p>
+this就是所在的函数所属对象的引用
+当建立一个对象时， 该对象调用函数， 就会将对象在堆中的地址赋值给this
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline43" class="outline-3">
+<h3 id="orgheadline43"><span class="section-number-3">3.2</span> static</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+<code>static</code> 修饰的成员可以被所有的对象共享， 而且可以直接被类名调用， 因为
+</p>
+<blockquote>
+<p>
+<code>static</code> 修饰的数据不在堆内存和栈内存中， 而是存在于方法区的静态区， 优先于对象存在， 因此随着类的加载而存在， 该数据是共享的
+</p>
+</blockquote>
+
+<p>
+注意事项：
+</p>
+<ol class="org-ol">
+<li>静态方法只能访问静态成员</li>
+<li>静态方法不能使用 <code>this</code> 或者 <code>super</code> 关键字(因为静态数据存在于方法区， 没有对象)</li>
+<li>主函数一定是静态的(这样虚拟机才可能直接从方法区中调用主函数， 因此也不会有具体的返回值)</li>
+</ol>
+
+<p>
+Tips:
+</p>
+<ol class="org-ol">
+<li>static variables
+<ol class="org-ol">
+<li>if this variable in all the objects are the same, it should be decorated by static</li>
+<li>if not, obviously not.</li>
+</ol></li>
+<li>static method
+<ol class="org-ol">
+<li>Can't be described by `static`, if it visit non-static data</li>
+<li>An Object is used to pack special data</li>
+</ol></li>
+</ol>
+</div>
+
+<div id="outline-container-orgheadline42" class="outline-4">
+<h4 id="orgheadline42"><span class="section-number-4">3.2.1</span> Static Code Block</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<div class="org-src-container">
+
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">staticDemo</span> {
+    <span style="color: #4f97d7; font-weight: bold;">static</span> {
+        System.out.println(<span style="color: #2d9574;">"This is a static code."</span>);
+    }
+}
+</pre>
+</div>
+<p>
+It would be loaded when the class is being loaded(only once)<br  />
+We can initialize the class by static code without creating an object
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline44" class="outline-3">
+<h3 id="orgheadline44"><span class="section-number-3">3.3</span> Extends</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+A class can only have one parent class
+</p>
+
+<p>
+子父类成员的特点体现：
+</p>
+<ol class="org-ol">
+<li>成员变量
+<ol class="org-ol">
+<li>本类的成员与局部变量同名， 用this区分</li>
+<li>子类与父类的成员同名， 用super区分父类</li>
+</ol></li>
+<li>成员函数
+<ol class="org-ol">
+<li>调用成员函数时， 如果在子类中找不到该方法， 会到父类中去找</li>
+<li>覆盖父类的方法时，子类权限必须要大于等于父类中的权限， 静态方法只能被静态覆盖</li>
+</ol></li>
+<li>构造函数</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2016-09-02 周五 15:49</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

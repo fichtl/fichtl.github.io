@@ -1,0 +1,2930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-09-02 周五 15:49 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Python</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Zhihao Wang" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Python</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline9">1. Code Blocks</a></li>
+<li><a href="#orgheadline13">2. String</a></li>
+<li><a href="#orgheadline32">3. Data Structures</a></li>
+<li><a href="#orgheadline42">4. Modules</a></li>
+<li><a href="#orgheadline54">5. Input and Output</a></li>
+<li><a href="#orgheadline62">6. Errors and Exceptions</a></li>
+<li><a href="#orgheadline77">7. Classes</a></li>
+<li><a href="#orgheadline111">8. Standard Library</a></li>
+<li><a href="#orgheadline113">9. Appendix</a></li>
+<li><a href="#orgheadline114">10. Notes</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9"><span class="section-number-2">1</span> Code Blocks</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> Hello World</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">! /use/bin/env python</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">import modules used here -- sys is a very standard one</span>
+<span style="color: #4f97d7; font-weight: bold;">import</span> sys
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Gather our code in a main() function</span>
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>():
+    <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'Hello there'</span>, sys.argv[1]
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Command line args are in sys.argv[1], sys.argv[2] ...</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">sys.argv[0] is the script name itself and can be ignored</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Standard boilerplate to call the main() function to begin</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">the program.</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">__name__</span> == <span style="color: #2d9574;">'__main__'</span>:
+    main()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> User-defined function</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> sys
+
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>():
+    <span style="color: #4f97d7; font-weight: bold;">print</span> repeat(<span style="color: #2d9574;">'ha'</span>,<span style="color: #a45bad;">True</span>)
+    <span style="color: #4f97d7; font-weight: bold;">print</span> repeat(<span style="color: #2d9574;">'oh'</span>,<span style="color: #a45bad;">False</span>)
+
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">repeat</span>(s,exclaim):
+<span style="color: #2d9574;">"""</span>
+<span style="color: #2d9574;">Returns the string 's' repeated 3 times.</span>
+<span style="color: #2d9574;">If exclaim is true, add exclamation marks.</span>
+<span style="color: #2d9574;">"""</span>
+    <span style="color: #7590db;">result</span> = s + s + s
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">or just s*3</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">it would be faster than '+'</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">because '*' calculates the size of the resulting object once</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">whereas with '+' that calculation is made each time '+' is called</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> exclaim:
+    <span style="color: #7590db;">result</span> += <span style="color: #2d9574;">'!!!'</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> result
+
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">__name__</span> == <span style="color: #2d9574;">'__main()__'</span>:
+    main()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> Split the string not only with space</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">split_string_with_alphanumeric_characters</span>(string):
+    <span style="color: #7590db;">word_list</span> = []
+    <span style="color: #7590db;">character_list</span> = []
+    <span style="color: #4f97d7; font-weight: bold;">for</span> c <span style="color: #4f97d7; font-weight: bold;">in</span> string:
+        <span style="color: #4f97d7; font-weight: bold;">if</span> c.isalnum():
+            <span style="color: #7590db;">character_list</span> = []
+        <span style="color: #4f97d7; font-weight: bold;">elif</span> <span style="color: #4f97d7;">len</span>(character_list)&gt;0:
+            <span style="color: #7590db;">word</span> = <span style="color: #2d9574;">""</span>.join(character_list)
+            <span style="color: #7590db;">word</span> = word.lower()
+            word_list.append(word)
+            <span style="color: #7590db;">character_list</span> = []
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">len</span>(character_list)&gt;0:
+        <span style="color: #7590db;">word</span> = <span style="color: #2d9574;">""</span>.join(character_list)
+        <span style="color: #7590db;">word</span> = word.lower()
+        word_list.append(word)
+    <span style="color: #4f97d7; font-weight: bold;">return</span> word_list
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">1.4</span> Some Interesting Code</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><span class="section-number-4">1.4.1</span> Prime Number under 1000</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #4f97d7;">filter</span>(<span style="color: #a45bad;">None</span>,
+             <span style="color: #4f97d7;">map</span>(<span style="color: #4f97d7; font-weight: bold;">lambda</span> y: y*<span style="color: #4f97d7;">reduce</span>(<span style="color: #4f97d7; font-weight: bold;">lambda</span> x,y: x*y!=0,
+                                    <span style="color: #4f97d7;">map</span>(<span style="color: #4f97d7; font-weight: bold;">lambda</span> x,y=y:y%x,
+                                        <span style="color: #4f97d7;">range</span>(2, <span style="color: #4f97d7;">int</span>(<span style="color: #4f97d7;">pow</span>(y, 0.5)+1))),
+                                    1),
+                 <span style="color: #4f97d7;">range</span>(2, 1000)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.4.2</span> First 10 Fibonacci Number</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #4f97d7;">map</span>(<span style="color: #4f97d7; font-weight: bold;">lambda</span> x,f=<span style="color: #4f97d7; font-weight: bold;">lambda</span> x,f:(x&lt;=1) <span style="color: #4f97d7; font-weight: bold;">or</span> (f(x-1,f)+f(x-2,f)): f(x,f),
+          <span style="color: #4f97d7;">range</span>(10))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.4.3</span> Mandelbrot Set</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span> (<span style="color: #4f97d7; font-weight: bold;">lambda</span> Ru,Ro,Iu,Io,IM,Sx,Sy:<span style="color: #4f97d7;">reduce</span>(<span style="color: #4f97d7; font-weight: bold;">lambda</span> x,y:x+y,<span style="color: #4f97d7;">map</span>(<span style="color: #4f97d7; font-weight: bold;">lambda</span> y,
+Iu=Iu,Io=Io,Ru=Ru,Ro=Ro,Sy=Sy,L=<span style="color: #4f97d7; font-weight: bold;">lambda</span> yc,Iu=Iu,Io=Io,Ru=Ru,Ro=Ro,i=IM,
+Sx=Sx,Sy=Sy:<span style="color: #4f97d7;">reduce</span>(<span style="color: #4f97d7; font-weight: bold;">lambda</span> x,y:x+y,<span style="color: #4f97d7;">map</span>(<span style="color: #4f97d7; font-weight: bold;">lambda</span> x,xc=Ru,yc=yc,Ru=Ru,Ro=Ro,
+i=i,Sx=Sx,F=<span style="color: #4f97d7; font-weight: bold;">lambda</span> xc,yc,x,y,k,f=<span style="color: #4f97d7; font-weight: bold;">lambda</span> xc,yc,x,y,k,f:(k&lt;=0)<span style="color: #4f97d7; font-weight: bold;">or</span> (x*x+y*y
+&gt;=4.0) <span style="color: #4f97d7; font-weight: bold;">or</span> 1+f(xc,yc,x*x-y*y+xc,2.0*x*y+yc,k-1,f):f(xc,yc,x,y,k,f):<span style="color: #4f97d7;">chr</span>(
+64+F(Ru+x*(Ro-Ru)/Sx,yc,0,0,i)),<span style="color: #4f97d7;">range</span>(Sx))):L(Iu+y*(Io-Iu)/Sy),<span style="color: #4f97d7;">range</span>(Sy
+))))(-2.1, 0.7, -1.2, 1.2, 30, 80, 24)
+<span style="color: #2aa1ae; background-color: #292e34;">#    </span><span style="color: #2aa1ae; background-color: #292e34;">\___ ___/  \___ ___/  |   |   |__ lines on screen</span>
+<span style="color: #2aa1ae; background-color: #292e34;">#        </span><span style="color: #2aa1ae; background-color: #292e34;">V          V      |   |______ columns on screen</span>
+<span style="color: #2aa1ae; background-color: #292e34;">#        </span><span style="color: #2aa1ae; background-color: #292e34;">|          |      |__________ maximum of "iterations"</span>
+<span style="color: #2aa1ae; background-color: #292e34;">#        </span><span style="color: #2aa1ae; background-color: #292e34;">|          |_________________ range on y axis</span>
+<span style="color: #2aa1ae; background-color: #292e34;">#        </span><span style="color: #2aa1ae; background-color: #292e34;">|____________________________ range on x axis</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.4.4</span> Infinite Recursion</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<div class="org-src-container">
+
+<pre class="src src-python">Python 2.4.1 (<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">1, Apr 12 2005, 15:37:40)</span>
+[GCC 3.4.3] on linux2
+Type <span style="color: #2d9574;">"help"</span>, <span style="color: #2d9574;">"copyright"</span>, <span style="color: #2d9574;">"credits"</span> <span style="color: #4f97d7; font-weight: bold;">or</span> <span style="color: #2d9574;">"license"</span> <span style="color: #4f97d7; font-weight: bold;">for</span> more information.
+&gt;&gt;&gt; GNU=[<span style="color: #2d9574;">"GNU"</span>,<span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">"Unix"</span>]
+&gt;&gt;&gt; GNU[0]=GNU
+&gt;&gt;&gt; GNU
+[[...], <span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">'Unix'</span>]
+&gt;&gt;&gt; GNU[0]
+[[...], <span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">'Unix'</span>]
+&gt;&gt;&gt; GNU[0][0]
+[[...], <span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">'Unix'</span>]
+&gt;&gt;&gt; GNU[0][0][0]
+[[...], <span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">'Unix'</span>]
+&gt;&gt;&gt; GNU[0][0][0][0]
+[[...], <span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">'Unix'</span>]
+&gt;&gt;&gt; GNU[0][0][0][0][0]
+[[...], <span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">'Unix'</span>]
+&gt;&gt;&gt; GNU[0][0][0][0][0][0]
+[[...], <span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">'Unix'</span>]
+&gt;&gt;&gt; GNU[0][0][0][0][0][0][0]
+[[...], <span style="color: #2d9574;">"'s not"</span>, <span style="color: #2d9574;">'Unix'</span>]
+</pre>
+</div>
+
+<hr  />
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13"><span class="section-number-2">2</span> String</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">2.1</span> String Methods</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+
+<pre class="src src-python">s.lower(), s.upper()
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">returns the lowercase or uppercase version of the string</span>
+
+s.strip()
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">returns a string with whitespace removed from start and end</span>
+
+s.isalpha()/s.isdigit()/s.isspace()
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">tests if all the string chars are in the various character classes</span>
+
+s.startswith(<span style="color: #2d9574;">'other'</span>), s.endswith(<span style="color: #2d9574;">'other'</span>)
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">tests if the string starts or ends with the given other string</span>
+
+s.find(<span style="color: #2d9574;">'other'</span>)
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">searches for the given other string (not a regular expresion) with s, and return the first index where it begins or -1 if not found</span>
+
+s.replace(<span style="color: #2d9574;">'old'</span>, <span style="color: #2d9574;">'new'</span>)
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">returns a string where all occurrences of 'old' have been replaced by 'new'</span>
+
+s.split(<span style="color: #2d9574;">'delim'</span>)
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">returns a list of substrings seperated by the given delimiter.</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">The delimiter is not a regular expression, it's just text.</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">As a convenient special case s.split() (with no arguments) splits on all whitespace chars.</span>
+
+s.join(<span style="color: #4f97d7;">list</span>)
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">opposite of split(), joins the elements in the given list together using the string as the delimiter.</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">e.g. '---'.join(['aaa', 'bbb', 'ccc']) -&gt; aaa---bbb---ccc</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">2.2</span> Some features</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li><code>+</code> can concatenate two strings, but it does not automatically convert numbers
+or other types to string form</li>
+<li>A <code>raw</code> string literal is prefixed by an <code>r</code> and passes all the chars through without
+special treatment of backslashes;
+A <code>u</code> prefix allows you to write a unicode string literal (Python has lots
+of other unicode support features)</li>
+<li>Quotes:
+<ul class="org-ul">
+<li>"" equals to '' (two single quote)</li>
+<li>Double quoted literal can contain single quote without any fuss
+and likewise single quoted string can contain double quotes</li>
+<li>String literals inside triple quotes, """ or ''', can multiple lines of text</li>
+</ul></li>
+<li>Python can't concatenate two objects with different types, like <code>str</code> and <code>int</code>
+     (While we can change int to string using <code>str(len(a))</code> where object <code>a</code> is a string)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">2.3</span> String with variables</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+'<code>string1 + var1 + string2 + ... varn ...</code>'<br  />
+can be expressed as:<br  />
+'<code>string1 %type_var1 string2 ... %type_var2 ... % (var1, ..., varn)</code>'
+</p>
+
+<p>
+For example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">text</span> = <span style="color: #2d9574;">"%d little pigs come out or I'll %s and %s and %s"</span> % (3, <span style="color: #2d9574;">'huff'</span>, <span style="color: #2d9574;">'puff'</span>, <span style="color: #2d9574;">'blow down'</span>)
+&gt;&gt;&gt; text
+<span style="color: #2d9574;">"3 little pigs come out or I'll huff and puff and blow down"</span>
+</pre>
+</div>
+<blockquote>
+<p>
+It's an old way to format a string. We would talk about <a href="#fancier">fancier output</a> of string.
+</p>
+</blockquote>
+
+<hr  />
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline32" class="outline-2">
+<h2 id="orgheadline32"><span class="section-number-2">3</span> Data Structures</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">3.1</span> List</h3>
+<div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">3.1.1</span> List Methods</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #4f97d7;">list</span>.append(elem)
+<span class="linenr"> 2: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">adds a single element to the end of the list.</span>
+<span class="linenr"> 3: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Common error: does not return the new list, just modifies the original.</span>
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span><span style="color: #4f97d7;">list</span>.insert(index, elem)
+<span class="linenr"> 6: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">inserts the element at the given index, shifting elements to the right.</span>
+<span class="linenr"> 7: </span>
+<span class="linenr"> 8: </span><span style="color: #4f97d7;">list</span>.extend(list2)
+<span class="linenr"> 9: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">adds the elements in list2 to the end of the list.</span>
+<span class="linenr">10: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Using + or += on a list is similar to using extend().</span>
+<span class="linenr">11: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">It returns nothing, so list = list.extend(list2) is wrong!!!</span>
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span style="color: #4f97d7;">list</span>.index(elem)
+<span class="linenr">14: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">searches for the given element from the start of the list and returns its index.</span>
+<span class="linenr">15: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Throws a ValueError if the element does not appear (use "in" to check without a ValueError).</span>
+<span class="linenr">16: </span>
+<span class="linenr">17: </span><span style="color: #4f97d7;">list</span>.remove(elem)
+<span class="linenr">18: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">searches for the first instance of the given element and removes it</span>
+<span class="linenr">19: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">throws ValueError if not present</span>
+<span class="linenr">20: </span>
+<span class="linenr">21: </span><span style="color: #4f97d7;">list</span>.sort()
+<span class="linenr">22: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">sorts the list in place (does not return it).</span>
+<span class="linenr">23: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">(The sorted() function shown below is preferred.)</span>
+<span class="linenr">24: </span>
+<span class="linenr">25: </span><span style="color: #4f97d7;">list</span>.reverse()
+<span class="linenr">26: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">reverses the list in place (does not return it)</span>
+<span class="linenr">27: </span>
+<span class="linenr">28: </span><span style="color: #4f97d7;">list</span>.pop(index)
+<span class="linenr">29: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">removes and returns the element at the given index.</span>
+<span class="linenr">30: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Returns the rightmost element if index is omitted (roughly the opposite of append()).</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15"><span class="section-number-4">3.1.2</span> List Comprehensions</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">example 1:</span>
+<span style="color: #7590db;">nums</span> = [1, 2, 3, 4]
+<span style="color: #7590db;">squares</span> = [ n * n <span style="color: #4f97d7; font-weight: bold;">for</span> n <span style="color: #4f97d7; font-weight: bold;">in</span> nums ]
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Output: [1, 4, 9, 16]</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">example 2:</span>
+<span style="color: #7590db;">strs</span> = [<span style="color: #2d9574;">'hello'</span>, <span style="color: #2d9574;">'and'</span>, <span style="color: #2d9574;">'goodbye'</span>]
+<span style="color: #7590db;">shouting</span> = [ s.upper() + <span style="color: #2d9574;">'!!!'</span> <span style="color: #4f97d7; font-weight: bold;">for</span> s <span style="color: #4f97d7; font-weight: bold;">in</span> strs ]
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Output: ['HELLO!!!', 'AND!!!', 'GOODBYE!!!']</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">example 3:</span>
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Select values &lt;= 2</span>
+<span style="color: #7590db;">nums</span> = [2, 8, 1, 6]
+<span style="color: #7590db;">small</span> = [ n <span style="color: #4f97d7; font-weight: bold;">for</span> n <span style="color: #4f97d7; font-weight: bold;">in</span> nums <span style="color: #4f97d7; font-weight: bold;">if</span> n &lt;= 2 ]
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Output: [2, 1]</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Select fruits containing 'a', change to upper case</span>
+<span style="color: #7590db;">fruits</span> = [<span style="color: #2d9574;">'apple'</span>, <span style="color: #2d9574;">'cherry'</span>, <span style="color: #2d9574;">'bannana'</span>, <span style="color: #2d9574;">'lemon'</span>]
+<span style="color: #7590db;">afruits</span> = [ s.upper() <span style="color: #4f97d7; font-weight: bold;">for</span> s <span style="color: #4f97d7; font-weight: bold;">in</span> fruits <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">'a'</span> <span style="color: #4f97d7; font-weight: bold;">in</span> s ]
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Output: ['APPLE', 'BANNANA']</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">example 4:</span>
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">flatten a list using a listcomp with two 'for'</span>
+<span style="color: #7590db;">vec</span> = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+[num <span style="color: #4f97d7; font-weight: bold;">for</span> elem <span style="color: #4f97d7; font-weight: bold;">in</span> vec <span style="color: #4f97d7; font-weight: bold;">for</span> num <span style="color: #4f97d7; font-weight: bold;">in</span> elem]
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">example 5: (Nested List Comprehensions)</span>
+<span style="color: #7590db;">matrix</span> = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+[[row[i] <span style="color: #4f97d7; font-weight: bold;">for</span> row <span style="color: #4f97d7; font-weight: bold;">in</span> matrix] <span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(4)]
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Output: [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]</span>
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">same as zip(*matrix)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">3.1.3</span> <code>[]</code> and <code>len()</code></h4>
+<div class="outline-text-4" id="text-3-1-3">
+<ul class="org-ul">
+<li><code>[]</code> syntax and the <code>len()</code> function actually work on any sequence type<br  />
+(strings, lists, etc&#x2026;)</li>
+<li><code>len()</code> can tell you how long a string is, the number of elements in lists
+and tuples (another array-like data structure), and the number of key-value
+pairs in a dictionary</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline20" class="outline-4">
+<h4 id="orgheadline20"><span class="section-number-4">3.1.4</span> Functional Programing Tools</h4>
+<div class="outline-text-4" id="text-3-1-4">
+</div><div id="outline-container-orgheadline17" class="outline-5">
+<h5 id="orgheadline17"><span class="section-number-5">3.1.4.1</span> filter</h5>
+<div class="outline-text-5" id="text-3-1-4-1">
+<p>
+<code>filter(function, sequence)</code> returns a sequence consisting of those items
+from the sequence for which <code>function(item)</code> is true.
+</p>
+
+<p>
+If sequence is a <code>str</code>, <code>unicode</code> or <code>tuple</code>, the result will be of the same
+type; otherwise it's always a lists.
+</p>
+
+<p>
+For example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">f</span>(x): <span style="color: #4f97d7; font-weight: bold;">return</span> x % 3 == 0 <span style="color: #4f97d7; font-weight: bold;">or</span> x % 5 == 0
+&gt;&gt;&gt; <span style="color: #4f97d7;">filter</span>(f, <span style="color: #4f97d7;">range</span>(2, 25))
+[3, 5, 6, 9, 10, 12, 15, 18, 20, 21, 24]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-5">
+<h5 id="orgheadline18"><span class="section-number-5">3.1.4.2</span> map</h5>
+<div class="outline-text-5" id="text-3-1-4-2">
+<p>
+<code>map(function, sequence[, sequence...])</code> calls <code>function(item)</code> for each of
+the sequence's items and returns a list of the return value.
+</p>
+
+<p>
+For example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">cube</span>(x): <span style="color: #4f97d7; font-weight: bold;">return</span> x**3
+&gt;&gt;&gt; <span style="color: #4f97d7;">map</span>(cube, <span style="color: #4f97d7;">range</span>(1, 11))
+[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+</pre>
+</div>
+<p>
+More than one sequence may be passed!! (Obviously they should have same length.)
+</p>
+
+<p>
+Another example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">seq</span> = <span style="color: #4f97d7;">range</span>(0, 4)
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">add</span>(x, y): <span style="color: #4f97d7; font-weight: bold;">return</span> x+y
+&gt;&gt;&gt; <span style="color: #4f97d7;">map</span>(add, seq, seq)
+[0, 2, 4, 6]
+</pre>
+</div>
+<blockquote>
+<p>
+I love this function!
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-5">
+<h5 id="orgheadline19"><span class="section-number-5">3.1.4.3</span> reduce</h5>
+<div class="outline-text-5" id="text-3-1-4-3">
+<p>
+<code>reduce(function, sequence)</code> returns a single value constructed by calling
+the binary function <code>function()</code> on the first two items of the sequence,
+then on the result and the next item, and so on.
+</p>
+
+<p>
+For example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">add</span>(x, y): <span style="color: #4f97d7; font-weight: bold;">return</span> x+y
+&gt;&gt;&gt; <span style="color: #4f97d7;">reduce</span>(add, <span style="color: #4f97d7;">range</span>(1, 11))
+55
+</pre>
+</div>
+<blockquote>
+<p>
+A third argument can be passed to indicate the <b>starting value</b>
+</p>
+
+<p>
+I love this function too!
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22"><span class="section-number-3">3.2</span> Tuples and Sequences</h3>
+<div class="outline-text-3" id="text-3-2">
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">t</span> = 12345, 54321, <span style="color: #2d9574;">'hello!'</span>
+&gt;&gt;&gt; t
+(12345, 54321, <span style="color: #2d9574;">'hello!'</span>)
+&gt;&gt;&gt; <span style="color: #7590db;">u</span> = t, (1, 2, 3, 4, 5)
+&gt;&gt;&gt; u
+((12345, 54321, <span style="color: #2d9574;">'hello!'</span>), (1, 2, 3, 4, 5))
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">single element tuple:</span>
+&gt;&gt;&gt; <span style="color: #7590db;">singleton</span> = <span style="color: #2d9574;">'hello'</span>,        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&lt;-- note trailing comma</span>
+&gt;&gt;&gt; <span style="color: #4f97d7;">len</span>(singleton)
+1
+</pre>
+</div>
+<blockquote>
+<p>
+Be ware: <code>tuples</code> are <b>immutable</b>!
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23"><span class="section-number-3">3.3</span> Sets</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+A set is an unordered collection with <b>no duplicated elements</b>.
+</p>
+
+<p>
+Basic uses include membership testing and eliminating duplicate entries.
+</p>
+
+<p>
+Set objects also support mathematical operations like union, intersection,
+difference, and symmetric difference.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">a</span> = <span style="color: #4f97d7;">set</span>(<span style="color: #2d9574;">'abracadabra'</span>)
+&gt;&gt;&gt; <span style="color: #7590db;">b</span> = <span style="color: #4f97d7;">set</span>(<span style="color: #2d9574;">'alacazam'</span>)
+&gt;&gt;&gt; a - b       <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">letters in a but not in b</span>
+<span style="color: #4f97d7;">set</span>([<span style="color: #2d9574;">'r'</span>, <span style="color: #2d9574;">'d'</span>, <span style="color: #2d9574;">'b'</span>])
+&gt;&gt;&gt; a | b       <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">letters in either a or b</span>
+<span style="color: #4f97d7;">set</span>([<span style="color: #2d9574;">'a'</span>, <span style="color: #2d9574;">'c'</span>, <span style="color: #2d9574;">'r'</span>, <span style="color: #2d9574;">'d'</span>, <span style="color: #2d9574;">'b'</span>, <span style="color: #2d9574;">'m'</span>, <span style="color: #2d9574;">'z'</span>, <span style="color: #2d9574;">'l'</span>])
+&gt;&gt;&gt; a &amp; b       <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">letters in both a and b</span>
+<span style="color: #4f97d7;">set</span>([<span style="color: #2d9574;">'a'</span>, <span style="color: #2d9574;">'c'</span>])
+&gt;&gt;&gt; a ^ b       <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">letters in a or b but not both</span>
+<span style="color: #4f97d7;">set</span>([<span style="color: #2d9574;">'r'</span>, <span style="color: #2d9574;">'d'</span>, <span style="color: #2d9574;">'b'</span>, <span style="color: #2d9574;">'m'</span>, <span style="color: #2d9574;">'z'</span>, <span style="color: #2d9574;">'l'</span>])
+</pre>
+</div>
+
+<p>
+<b>Set comprehensions</b>
+</p>
+
+<p>
+Similar to list comprehension.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">a</span> = { x <span style="color: #4f97d7; font-weight: bold;">for</span> x <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #2d9574;">'abracadabra'</span> <span style="color: #4f97d7; font-weight: bold;">if</span> x <span style="color: #4f97d7; font-weight: bold;">not</span> <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #2d9574;">'abc'</span> }
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24"><span class="section-number-3">3.4</span> Dictionaries</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Dictionaries are indexed by keys, which can be any immutable type;
+</p>
+
+<p>
+Strings and numbers can always be keys.
+</p>
+
+<p>
+Tuples can be used as keys if they contain only strings, numbers, or tuples;
+if a tuple contains any mutable object either directly or indirectly, it
+cannot be used as a key.
+</p>
+
+<p>
+It is best to think of a dictionary as an ordered <b>set</b> of <code>key: value</code> pairs,
+with the requirement that the keys are unique (within one dictionary).
+</p>
+
+<p>
+For example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">tel</span> = {<span style="color: #2d9574;">'jack'</span>: 4098, <span style="color: #2d9574;">'sape'</span>: 4139}
+&gt;&gt;&gt; <span style="color: #7590db;">tel</span>[<span style="color: #2d9574;">'guido'</span>] = 4127
+&gt;&gt;&gt; tel
+{<span style="color: #2d9574;">'sape'</span>: 4139, <span style="color: #2d9574;">'guido'</span>: 4127, <span style="color: #2d9574;">'jack'</span>: 4098}
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Get the .keys() list:</span>
+&gt;&gt;&gt; tel.keys()
+[<span style="color: #2d9574;">'sape'</span>, <span style="color: #2d9574;">'guido'</span>, <span style="color: #2d9574;">'jack'</span>]
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Get the .values() list:</span>
+&gt;&gt;&gt; tel.values()
+[4139, 4127, 4098]
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">.items() is the dict expressed as (key, value) tuples</span>
+&gt;&gt;&gt; tel.items()
+[(<span style="color: #2d9574;">'sape'</span>, 4139), (<span style="color: #2d9574;">'guido'</span>, 4127), (<span style="color: #2d9574;">'jack'</span>, 4098)]
+
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">In addition, dict comprehensions can be used to create dictionaries from arbitrary key and value expressions:</span>
+&gt;&gt;&gt; {x: x**2 <span style="color: #4f97d7; font-weight: bold;">for</span> x <span style="color: #4f97d7; font-weight: bold;">in</span> (2, 4, 6)}
+{2: 4, 4: 16, 6: 36}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31"><span class="section-number-3">3.5</span> Looping techniques</h3>
+<div class="outline-text-3" id="text-3-5">
+</div><div id="outline-container-orgheadline25" class="outline-4">
+<h4 id="orgheadline25"><span class="section-number-4">3.5.1</span> <code>enumerate</code></h4>
+<div class="outline-text-4" id="text-3-5-1">
+<p>
+When looping through a sequence, the position index and corresponding value
+can be retrieved at the same time using the <code>enumerate()</code> function
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">for</span> i, v <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>([<span style="color: #2d9574;">'tic'</span>, <span style="color: #2d9574;">'tac'</span>, <span style="color: #2d9574;">'toe'</span>]):
+...     <span style="color: #4f97d7; font-weight: bold;">print</span> i, v
+...
+0 tic
+1 tac
+2 toe
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline26" class="outline-4">
+<h4 id="orgheadline26"><span class="section-number-4">3.5.2</span> <code>zip</code></h4>
+<div class="outline-text-4" id="text-3-5-2">
+<p>
+To loop over two or more sequences at the same time, the entries can be
+paired with the <code>zip()</code> function
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">questions</span> = [<span style="color: #2d9574;">'name'</span>, <span style="color: #2d9574;">'quest'</span>, <span style="color: #2d9574;">'favorite color'</span>]
+&gt;&gt;&gt; <span style="color: #7590db;">answers</span> = [<span style="color: #2d9574;">'lancelot'</span>, <span style="color: #2d9574;">'the holy grail'</span>, <span style="color: #2d9574;">'blue'</span>]
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">for</span> q, a <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">zip</span>(questions, answers):
+...     <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'What is your {0}? It is {1}.'</span>.<span style="color: #4f97d7;">format</span>(q, a)
+...
+What <span style="color: #4f97d7; font-weight: bold;">is</span> your name? It <span style="color: #4f97d7; font-weight: bold;">is</span> lancelot.
+What <span style="color: #4f97d7; font-weight: bold;">is</span> your quest? It <span style="color: #4f97d7; font-weight: bold;">is</span> the holy grail.
+What <span style="color: #4f97d7; font-weight: bold;">is</span> your favorite color? It <span style="color: #4f97d7; font-weight: bold;">is</span> blue.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline27" class="outline-4">
+<h4 id="orgheadline27"><span class="section-number-4">3.5.3</span> <code>reversed</code></h4>
+<div class="outline-text-4" id="text-3-5-3">
+<p>
+To loop over a sequence in reverse, first specify the sequence in a foward
+direction and then call the <code>reversed()</code> function
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">reversed</span>(<span style="color: #4f97d7;">xrange</span>(1, 10, 2))
+...     <span style="color: #4f97d7; font-weight: bold;">print</span> i
+...
+9
+7
+5
+3
+1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline28" class="outline-4">
+<h4 id="orgheadline28"><span class="section-number-4">3.5.4</span> <code>sorted</code></h4>
+<div class="outline-text-4" id="text-3-5-4">
+<p>
+To loop over a sequence in sorted order, use the <code>sorted()</code> function which
+returns a new sorted list while leaving the source unaltered
+</p>
+
+<p>
+<code>sorted(list, key=func, reverse=True~False)</code>
+</p>
+<ul class="org-ul">
+<li><code>sorted(list)</code> : return a list with increasing order</li>
+<li><code>sorted(list, reverse=True)</code> : return a list with descending order</li>
+<li><code>sorted(list, key=func)</code> : return a list ordered by the value of func(elem-in-list)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">3.5.5</span> <code>iteritems</code></h4>
+<div class="outline-text-4" id="text-3-5-5">
+<p>
+When looping through dictionaries, the key and corresponding value can be
+retrieved at the same time using the <code>iteritmes()</code> method
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">knights</span> = {<span style="color: #2d9574;">'gallahand'</span>: <span style="color: #2d9574;">'the pure'</span>, <span style="color: #2d9574;">'robin'</span>: <span style="color: #2d9574;">'the brave'</span>}
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">for</span> k, v <span style="color: #4f97d7; font-weight: bold;">in</span> knights.iteritems():
+...     <span style="color: #4f97d7; font-weight: bold;">print</span> k, v
+...
+gallahand the pure
+robin the brave
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">3.5.6</span> slice notation</h4>
+<div class="outline-text-4" id="text-3-5-6">
+<p>
+To change a sequence you are iterating over while inside the loop(for example
+to duplicate certain items), it is recommended that you first make a copy.
+</p>
+
+<p>
+Looping over a sequence does <b>not</b> implicityly make a copy.
+</p>
+
+<p>
+The slice notation makes this especially convenient:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">words</span> = [<span style="color: #2d9574;">'cat'</span>, <span style="color: #2d9574;">'window'</span>, <span style="color: #2d9574;">'defenestrate'</span>]
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">for</span> w <span style="color: #4f97d7; font-weight: bold;">in</span> words[:]:      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Loop over a slice copy of the entire list or it maybe catastrophe!!!</span>
+...     <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">len</span>(w) &gt; 6:
+...         words.insert(0, w)
+...
+&gt;&gt;&gt; words
+[<span style="color: #2d9574;">'defenestrate'</span>, <span style="color: #2d9574;">'cat'</span>, <span style="color: #2d9574;">'window'</span>, <span style="color: #2d9574;">'defenestrate'</span>]
+</pre>
+</div>
+<blockquote>
+<p>
+Python variable names actually point to an object, and not a specific spot in memory
+</p>
+
+<p>
+<code>newList = oldList</code> would create two different variables that point to the<br  />
+same object, therefore, changing <code>oldList</code> would also change <code>newList</code>
+</p>
+
+<p>
+However, when you do <code>newList = oldList[:]</code>, it "slices" the list, and creates<br  />
+a new list with all the data contained in the first one, but both can be altered<br  />
+without changing the other
+</p>
+</blockquote>
+
+<hr  />
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline42" class="outline-2">
+<h2 id="orgheadline42"><span class="section-number-2">4</span> Modules</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+A module is a file containing Python definitions and statements. The files
+name is the module name with the suffix <code>.py</code> appended.
+</p>
+
+<p>
+Within a module, the module's name (as a string) is available as the value
+of the global variable '<code>__name__</code>'
+</p>
+</div>
+
+<div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33"><span class="section-number-3">4.1</span> import</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+It is customary but not required to place all <code>import</code> statements at the
+beginning of a module (or script, for that matter).
+</p>
+
+<p>
+There is a variant of the <code>import</code> statement that imports names from a module
+directly into the importing module's symbol table.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> fibo <span style="color: #4f97d7; font-weight: bold;">import</span> fib, fib2      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">this only imports fib and fib2</span>
+<span style="color: #4f97d7; font-weight: bold;">from</span> fibo <span style="color: #4f97d7; font-weight: bold;">import</span> *      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">this imports all names except those beginning with an underscore (_).</span>
+</pre>
+</div>
+<blockquote>
+<p>
+When we run a python module with <code>python modulename.py [arguments]</code>,
+the code in the module will be executed, just as if you import it,
+but with the '<code>__name__</code>' set to '<code>__main__</code>'
+</p>
+
+<p>
+A module can contain executable statements as well as function definitions.
+These statements are intended to initialize the module. They are executed
+only the first time the module name is encountered in an import statement.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline34" class="outline-3">
+<h3 id="orgheadline34"><span class="section-number-3">4.2</span> Module search path</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+When a module <code>mo</code> (for example) is imported the interpreter
+</p>
+<ol class="org-ol">
+<li>first searches for a built-in module with that name</li>
+<li>If not found, it then searches for a file named <code>mo.py</code> in a list
+of diretories given by the variable <code>sys.path</code></li>
+</ol>
+
+<p>
+<code>sys.path</code> is initialized from these locations:
+</p>
+<ul class="org-ul">
+<li>the directory containing the input script (or the current directory)</li>
+<li><code>PYTHONPATH</code> (a list of directory names, with the same syntax as the shell
+variable <code>PATH</code>)</li>
+<li>the installation-dependent default</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline35" class="outline-3">
+<h3 id="orgheadline35"><span class="section-number-3">4.3</span> "Compiled" Python files</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+If a file called <code>spam.pyc</code> exists in the directory where <code>spam.py</code> is found,
+this is assumed to contain an already-"byte-compiled" version of the module <code>spam</code>.
+</p>
+
+<p>
+The contents of the <code>spam.pyc</code> file are platform independent, so a Python
+module directory can be shared by machines of different architectures.
+</p>
+
+<p>
+Some tips for experts:
+</p>
+<ul class="org-ul">
+<li>When the Python interpreter is invoked with the <code>-O</code> flag, optimized code
+is generated and stored in <code>.pyo</code> files. The optimizer currently doesn't
+help much; it only removes <code>assert</code> statements. When <code>-O</code> is used, all
+bytecode is optimized; <code>.pyc</code> files are ignored and <code>.py</code> files are compiled
+to optimized bytecode.</li>
+<li>Passing two <code>-O</code> flags to the Python interpreter (<code>-OO</code>) will cause the
+bytecode compiler to perform optimizations that could in some rare cases
+result in malfunctioning programs. Currently only <code>__doc__</code> strings are
+removed from the bytecode, resulting in more compact <code>.pyo</code> files. Since
+some programs may rely on having these available, you should only use this
+option if you know what you’re doing.</li>
+<li>A program doesn't run any faster when it is read from a <code>.pyc</code> or <code>.pyo</code>
+file than when it is read from a <code>.py</code> file; the <b>only</b> thing that's faster
+about <code>.pyc</code> or <code>.pyo</code> files is the speed with which they are loaded.</li>
+<li>When a script is run by giving its name on the command line, the bytecode
+for the script is never written to a <code>.pyc</code> or <code>.pyo</code> file. Thus, the startup
+time of a script may be reduced by moving most of its code to a module and
+having a small bootstrap script that imports that module. It is also possible
+to name a <code>.pyc</code> or <code>.pyo</code> file directly on the command line.</li>
+<li>It is possible to have a file called <code>spam.pyc</code> (or <code>spam.pyo</code> when <code>-O</code> is
+used) without a file <code>spam.py</code> for the same module. This can be used to
+distribute a library of Python code in a form that is moderately hard to
+reverse engineer.</li>
+<li>The module <code>compileall</code> can create <code>.pyc</code> files (or <code>.pyo</code> files when <code>-O</code>
+     is used) for all modules in a directory.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline36" class="outline-3">
+<h3 id="orgheadline36"><span class="section-number-3">4.4</span> Standard Modules</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+The module <code>sys</code> is built into every Python interpreter.<br  />
+The variables <code>sys.ps1</code> and <code>sys.ps2</code> define the strings used as primary and
+secondary prompts.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> sys
+&gt;&gt;&gt; sys.ps1
+<span style="color: #2d9574;">'&gt;&gt;&gt; '</span>
+&gt;&gt;&gt; sys.ps2
+<span style="color: #2d9574;">'... '</span>
+&gt;&gt;&gt; <span style="color: #7590db;">sys.ps1</span> = <span style="color: #2d9574;">'C&gt; '</span>
+C&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'Yuck!'</span>
+Yuck!
+C&gt;
+</pre>
+</div>
+<blockquote>
+<p>
+The variable <code>sys.path</code> is a list of strings that determines the interpreter's
+search path for modules.<br  />
+You can modify it using standard list operation:
+</p>
+<pre class="example">
+sys.path.append(&lt;custom path&gt;)
+</pre>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline37" class="outline-3">
+<h3 id="orgheadline37"><span class="section-number-3">4.5</span> <code>dir()</code> Function</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+The built-in funciton <code>dir()</code> is used to find out which names a module defines.
+</p>
+
+<p>
+<b>Without</b> arguments, <code>dir()</code> lists the names you have defined currently, but
+it <b>does not</b> list the names of built-in functions and variables.<br  />
+They are defined in the standard module <code>__builtin__</code>, use <code>dir(__builtin__)</code>
+to get them.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline41" class="outline-3">
+<h3 id="orgheadline41"><span class="section-number-3">4.6</span> Packages</h3>
+<div class="outline-text-3" id="text-4-6">
+<blockquote>
+<p>
+Packages are a way of structuring Python's module namespace by using "dotted
+module names".
+</p>
+</blockquote>
+<p>
+The <code>__init__.py</code> files are <b>required</b> to make Python treat the directories as
+containing packages.<br  />
+In the simplest case, <code>__init__.py</code> can just be an empty
+file, but it can also execute initialization code for the package or set the
+<code>__all__</code> variable.
+</p>
+
+<p>
+For example:
+</p>
+<pre class="example">
+sound/                          Top-level package
+      __init__.py               Initialize the sound package
+      formats/                  Subpackage for file format conversions
+              __init__.py
+              wavread.py
+              wavwrite.py
+              aiffread.py
+              aiffwrite.py
+              auread.py
+              auwrite.py
+             ...
+      effects/                  Subpackage for sound effects
+              __init__.py
+              echo.py
+              surround.py
+              reverse.py
+              ...
+      filters/                  Subpackage for filters
+              __init__.py
+              equalizer.py
+              vocoder.py
+              karaoke.py
+              ...
+</pre>
+<ol class="org-ol">
+<li><p>
+Importing Individual modules from the package:
+</p>
+<pre class="example">
+import sound.effects.echo
+</pre>
+<blockquote>
+<p>
+This loads the submodule <code>sound.effects.echo</code>.<br  />
+It must be referenced with its full name:
+</p>
+<pre class="example">
+sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
+</pre>
+</blockquote></li>
+<li><p>
+An alternative way of importing the submodule:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> sound.effects <span style="color: #4f97d7; font-weight: bold;">import</span> echo
+echo.echofilter()
+</pre>
+</div></li>
+<li><p>
+Another variation is to import the desired function or variable directly:
+</p>
+<pre class="example">
+from sound.effects.echo import echofilter
+</pre>
+<blockquote>
+<p>
+Again, this loads the submodule <code>echo</code>, but this makes its function
+<code>echofilter()</code> directly available:
+</p>
+<pre class="example">
+echofilter(input, output, delay=0.7, atten=4)
+</pre>
+</blockquote></li>
+</ol>
+<blockquote>
+<p>
+When using <code>from package import item</code>, the 'item' can be either a submodule
+(or subpackage) of the package, or some other name defined in the package,
+like a function, class or variable.
+</p>
+</blockquote>
+</div>
+
+<div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38"><span class="section-number-4">4.6.1</span> Importing * From a Package</h4>
+<div class="outline-text-4" id="text-4-6-1">
+<p>
+The <code>import</code> statement uses the following convension:
+</p>
+<blockquote>
+<p>
+If a package's <code>__init__.py</code> code defines a list named <code>__all__</code>, it is taken
+to be the list of module names that should be imported when
+<code>from package import *</code> is encountered.
+</p>
+
+<p>
+If <code>__all__</code> is not defined, the statement does <b>not</b> import all submodules from
+the package <code>sound.effects</code> into the current namespace;<br  />
+it only ensures that the package <code>sound.effects</code> has been imported (possibly
+running <b>any</b> initialization code in <code>__init__.py</code>) and then import <b>whatever</b>
+names are defined in the package.<br  />
+This includes <b>any</b> names defined (and submodules explicitly loaded) by
+<code>__inti__.py</code>. It also includes any submodules of the package that were
+explicitly loaded by previous <code>import</code> statements.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline39" class="outline-4">
+<h4 id="orgheadline39"><span class="section-number-4">4.6.2</span> Intra-package References</h4>
+<div class="outline-text-4" id="text-4-6-2">
+<p>
+It's simple to refer another module in the same package:
+</p>
+<pre class="example">
+'import &lt;module_name&gt;' or 'from &lt;module_name&gt; import &lt;func_name&gt;'
+</pre>
+
+<p>
+You can write explicit relative imports with the <code>from module import name</code> form.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> . <span style="color: #4f97d7; font-weight: bold;">import</span> echo
+<span style="color: #4f97d7; font-weight: bold;">from</span> .. <span style="color: #4f97d7; font-weight: bold;">import</span> formats
+<span style="color: #4f97d7; font-weight: bold;">from</span> ..filters <span style="color: #4f97d7; font-weight: bold;">import</span> equalizer
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline40" class="outline-4">
+<h4 id="orgheadline40"><span class="section-number-4">4.6.3</span> Packages in Multiple Directories</h4>
+<div class="outline-text-4" id="text-4-6-3">
+<p>
+Packages support one more special attribute, <code>__path__</code>.<br  />
+This is initialized to be a list containing the name of the directory holding
+the package's <code>__init__.py</code> before the code in that file is executed.
+</p>
+
+<hr  />
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline54" class="outline-2">
+<h2 id="orgheadline54"><span class="section-number-2">5</span> Input and Output</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-orgheadline46" class="outline-3">
+<h3 id="fancier"><a id="orgheadline46"></a><span class="section-number-3">5.1</span> Fancier Output Formatting</h3>
+<div class="outline-text-3" id="text-fancier">
+</div>
+
+<div id="outline-container-orgheadline43" class="outline-4">
+<h4 id="orgheadline43"><span class="section-number-4">5.1.1</span> Three ways of writing values</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<ol class="org-ol">
+<li><i>expression statements</i></li>
+<li><code>print</code> statement</li>
+<li><code>write()</code> method of file objects<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline44" class="outline-4">
+<h4 id="orgheadline44"><span class="section-number-4">5.1.2</span> Two ways to format your output</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<ol class="org-ol">
+<li>Do all the string handling using string <b>slicing and concatenation</b> operations</li>
+<li><code>str.format()</code> method</li>
+</ol>
+
+<p>
+The <code>string</code> module contains a <code>Template</code> class which offers yet another way to
+substitude values into strings.
+</p>
+
+<p>
+Use <code>repr()</code> or <code>str()</code> functions to convert any value to a string:
+</p>
+<ol class="org-ol">
+<li><code>str()</code> function is meant to return representations of values which are fairly
+human-readable</li>
+<li><code>repr()</code> is meant to generate representations which can be read by the
+interpreter (or will force a <code>SyntaxError</code> if there is no equivalent syntax).</li>
+</ol>
+
+<p>
+Many values, such as numbers or structures like lists and dictionaries, have
+the same representation using either function.<br  />
+Strings and floating point numbers, in particular, are different.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">s</span> = <span style="color: #2d9574;">'Hello, world.'</span>
+&gt;&gt;&gt; <span style="color: #4f97d7;">str</span>(s)
+<span style="color: #2d9574;">'Hello, world.'</span>
+&gt;&gt;&gt; <span style="color: #4f97d7;">repr</span>(s)
+<span style="color: #2d9574;">"'Hello, world.'"</span>
+&gt;&gt;&gt; <span style="color: #4f97d7;">str</span>(1.0/7.0)
+<span style="color: #2d9574;">'0.142857142857'</span>
+&gt;&gt;&gt; <span style="color: #4f97d7;">repr</span>(1.0/7.0)
+<span style="color: #2d9574;">'0.14285714285714285'</span>
+&gt;&gt;&gt; <span style="color: #7590db;">x</span> = 10 * 3.25
+&gt;&gt;&gt; <span style="color: #7590db;">y</span> = 200 * 200
+&gt;&gt;&gt; <span style="color: #7590db;">s</span> = <span style="color: #2d9574;">'The value of x is '</span> + <span style="color: #4f97d7;">repr</span>(x) + <span style="color: #2d9574;">', and y is '</span> + <span style="color: #4f97d7;">repr</span>(y) + <span style="color: #2d9574;">'...'</span>
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> s
+The value of x <span style="color: #4f97d7; font-weight: bold;">is</span> 32.5, <span style="color: #4f97d7; font-weight: bold;">and</span> y <span style="color: #4f97d7; font-weight: bold;">is</span> 40000...
+&gt;&gt;&gt; <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">The repr() of a string adds string quotes and backslashes:</span>
+... <span style="color: #7590db;">hello</span> = <span style="color: #2d9574;">'hello, world\n'</span>
+&gt;&gt;&gt; <span style="color: #7590db;">hellos</span> = <span style="color: #4f97d7;">repr</span>(hello)
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> hellos
+<span style="color: #2d9574;">'hello, world\n'</span>
+&gt;&gt;&gt; <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">The argument to repr() may be any Python object:</span>
+... <span style="color: #4f97d7;">repr</span>((x, y, (<span style="color: #2d9574;">'spam'</span>, <span style="color: #2d9574;">'eggs'</span>)))
+<span style="color: #2d9574;">"(32.5, 40000, ('spam', 'eggs'))"</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline45" class="outline-4">
+<h4 id="orgheadline45"><span class="section-number-4">5.1.3</span> Two ways to write a table of squares and cubes</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">for</span> x <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(1, 11):
+...     <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #4f97d7;">repr</span>(x).rjust(2), <span style="color: #4f97d7;">repr</span>(x*x).rjust(3),
+...     <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Note trailing comma on previous line</span>
+...     <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #4f97d7;">repr</span>(x*x*x).rjust(4)
+...
+ 1   1    1
+ 2   4    8
+ 3   9   27
+ 4  16   64
+ 5  25  125
+ 6  36  216
+ 7  49  343
+ 8  64  512
+ 9  81  729
+10 100 1000
+
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">for</span> x <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(1,11):
+...     <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'{0:2d} {1:3d} {2:4d}'</span>.<span style="color: #4f97d7;">format</span>(x, x*x, x*x*x)
+...
+ 1   1    1
+ 2   4    8
+ 3   9   27
+ 4  16   64
+ 5  25  125
+ 6  36  216
+ 7  49  343
+ 8  64  512
+ 9  81  729
+10 100 1000
+</pre>
+</div>
+<ul class="org-ul">
+<li><p>
+<code>str.rjust(width)</code> method right-justifies a string in a field of a given
+<code>width</code> by padding it with spaces on the left.
+</p>
+<blockquote>
+<p>
+<code>str.ljust()</code> and <code>str.center()</code> are similar methods.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup><br  />
+<code>str.zfill()</code> pads a numeric string on the left with zeros.
+</p>
+</blockquote></li>
+<li><code>str.format()</code> method
+<ul class="org-ul">
+<li><p>
+Basic usage of the <code>str.format()</code> method:
+</p>
+<pre class="example">
+&gt;&gt;&gt; print '... {} ... {} ... {} ...'.format(arg1, arg2, arg3, ...)
+... arg1 ... arg2 ... arg3 ...
+</pre>
+<blockquote>
+<p>
+The brackets and characters within them (called format fields) are replaced
+with the objects passed into the <code>str.format()</code> method.
+</p>
+</blockquote></li>
+<li><p>
+A number in brackets refers to the position of the object passed:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'{0} and {1}'</span>.<span style="color: #4f97d7;">format</span>(<span style="color: #2d9574;">'spam'</span>, <span style="color: #2d9574;">'eggs'</span>)
+spam <span style="color: #4f97d7; font-weight: bold;">and</span> eggs
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'{1} and {0}'</span>.<span style="color: #4f97d7;">format</span>(<span style="color: #2d9574;">'spam'</span>, <span style="color: #2d9574;">'eggs'</span>)
+eggs <span style="color: #4f97d7; font-weight: bold;">and</span> spam
+</pre>
+</div></li>
+<li><p>
+If keyword arguments are used, their values are referred to by using the name:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'This {food} is {adjective}.'</span>.<span style="color: #4f97d7;">format</span>(
+...     food=<span style="color: #2d9574;">'spam'</span>, adjective=<span style="color: #2d9574;">'absolutely horrible'</span>)
+This spam <span style="color: #4f97d7; font-weight: bold;">is</span> absolutely horrible.
+</pre>
+</div>
+<blockquote>
+<p>
+Positional and keyword arguments can be arbitrarily combined.
+</p>
+</blockquote></li>
+<li><p>
+'<code>!s</code>' (apply <code>str()</code>) and '<code>!r</code>' (apply <code>repr()</code>) can be used to convert
+the value before it is formatted:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> math
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'The value of PI is approximately {}.'</span>.<span style="color: #4f97d7;">format</span>(math.pi)
+The value of PI <span style="color: #4f97d7; font-weight: bold;">is</span> approximately 3.14159265359.
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'The value of PI is approximately {!r}.'</span>.<span style="color: #4f97d7;">format</span>(math.pi)
+The value of PI <span style="color: #4f97d7; font-weight: bold;">is</span> approximately 3.141592653589793.
+</pre>
+</div></li>
+<li><p>
+An optional '<code>:</code>' and format specifier can follow the field name:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> math
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'The value of PI is approximately {0:.3f}.'</span>.<span style="color: #4f97d7;">format</span>(math.pi)
+The value of PI <span style="color: #4f97d7; font-weight: bold;">is</span> approximately 3.142.
+</pre>
+</div>
+<blockquote>
+<p>
+Passing an integer after the '<code>:</code>' will cause that field to be a minimum
+number of characters wide.
+</p>
+</blockquote></li>
+<li><p>
+It would be nice to pass the dict and using square bracket to access the keys
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">table</span> = {<span style="color: #2d9574;">'Sjoerd'</span>: 4127, <span style="color: #2d9574;">'Jack'</span>: 4098, <span style="color: #2d9574;">'Dcab'</span>: 8637678}
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> (<span style="color: #2d9574;">'Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; '</span>
+...        <span style="color: #2d9574;">'Dcab: {0[Dcab]:d}'</span>.<span style="color: #4f97d7;">format</span>(table))
+Jack: 4098; Sjoerd: 4127; Dcab: 8637678
+</pre>
+</div>
+<p>
+Or just pass the dict as keyword arguments with '<code>**</code>' notation.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">table</span> = {<span style="color: #2d9574;">'Sjoerd'</span>: 4127, <span style="color: #2d9574;">'Jack'</span>: 4098, <span style="color: #2d9574;">'Dcab'</span>: 8637678}
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; Dcab: {Dcab:d}'</span>.<span style="color: #4f97d7;">format</span>(**table)
+Jack: 4098; Sjoerd: 4127; Dcab: 8637678
+</pre>
+</div>
+<blockquote>
+<p>
+This is particularly useful in combination with the built-in function
+<code>vars()</code>, which returns a dictionary containing all local variables.
+</p>
+
+<p>
+See <a href="https://docs.python.org/2.7/library/string.html#formatstrings">Format String Syntax</a> for a complete overview of string formatting with
+<code>str.format()</code>
+</p>
+</blockquote></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline53" class="outline-3">
+<h3 id="orgheadline53"><span class="section-number-3">5.2</span> Reading and Writing Files</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+<code>open()</code> returns a file object, is most commonly used with <code>open(filename, mode)</code><br  />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" align="center">
+<caption class="t-above"><span class="table-number">Table 1:</span> Mode Table</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">mode</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>r</code></td>
+<td class="org-left">read only</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>w</code></td>
+<td class="org-left">write only (would erase an existing file)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>a</code></td>
+<td class="org-left">opens the file for appending</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>r+</code></td>
+<td class="org-left">for both reading and writing</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>b/wb/rb/r+b</code></td>
+<td class="org-left">(on windows) opens the file in binary mode</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orgheadline51" class="outline-4">
+<h4 id="orgheadline51"><span class="section-number-4">5.2.1</span> Methods of File Objects</h4>
+<div class="outline-text-4" id="text-5-2-1">
+</div><div id="outline-container-orgheadline47" class="outline-5">
+<h5 id="orgheadline47"><span class="section-number-5">5.2.1.1</span> <code>read()</code></h5>
+<div class="outline-text-5" id="text-5-2-1-1">
+<p>
+<code>read(size)</code> reads some quantity of data and returns it as a string, size is
+an optional numeric argument<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup><sup>, </sup><sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> (<code>bytes</code>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline48" class="outline-5">
+<h5 id="orgheadline48"><span class="section-number-5">5.2.1.2</span> <code>readline()</code></h5>
+<div class="outline-text-5" id="text-5-2-1-2">
+<p>
+<code>readline()</code> reads a single line from the file; '<code>\n</code>' is left at the end of
+the string<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">f</span> = <span style="color: #4f97d7;">open</span>(<span style="color: #2d9574;">'&lt;filename&gt;'</span>, <span style="color: #2d9574;">'r'</span>)
+&gt;&gt;&gt; f.readline()
+<span style="color: #2d9574;">'This is the first line of the file.\n'</span>
+&gt;&gt;&gt; f.readline()
+<span style="color: #2d9574;">'Second line of the file\n'</span>
+&gt;&gt;&gt; f.readline()
+<span style="color: #2d9574;">''</span>
+</pre>
+</div>
+<blockquote>
+<p>
+To read all the lines of a file in a <b>list</b>, use <code>list(f)</code> or <code>f.readlines()</code>
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline49" class="outline-5">
+<h5 id="orgheadline49"><span class="section-number-5">5.2.1.3</span> <code>write(string)</code></h5>
+<div class="outline-text-5" id="text-5-2-1-3">
+<p>
+<code>f.write(string)</code> writes the contents of <i>string</i> to the file, returning <b>None</b>.
+</p>
+<blockquote>
+<p>
+To write something other than a string, it needs to be converted to a string first.
+</p>
+</blockquote>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">value</span> = (<span style="color: #2d9574;">'the answer'</span>, 42)
+&gt;&gt;&gt; <span style="color: #7590db;">s</span> = <span style="color: #4f97d7;">str</span>(value)
+&gt;&gt;&gt; f.write(s)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline50" class="outline-5">
+<h5 id="orgheadline50"><span class="section-number-5">5.2.1.4</span> others</h5>
+<div class="outline-text-5" id="text-5-2-1-4">
+<ol class="org-ol">
+<li><code>f.tell()</code> returns an integer giving the file object's current position
+(measured in bytes).</li>
+<li><code>f.seek(offset, from_what)</code> is used to change the file objects's position,
+the position is computed from adding <code>offset</code> to a reference point<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>
+(<code>from_what</code>).</li>
+<li><p>
+Use <code>with</code> keyword when dealing with file objects, the file would close
+after its suite finishes.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">with</span> <span style="color: #4f97d7;">open</span>(<span style="color: #2d9574;">'workfile'</span>, <span style="color: #2d9574;">'r'</span>) <span style="color: #4f97d7; font-weight: bold;">as</span> f:
+...     <span style="color: #7590db;">read_data</span> = f.read()
+&gt;&gt;&gt; f.closed
+<span style="color: #a45bad;">True</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline52" class="outline-4">
+<h4 id="orgheadline52"><span class="section-number-4">5.2.2</span> Structured data with <code>Json(JavaScript Object Notation)</code></h4>
+<div class="outline-text-4" id="text-5-2-2">
+<p>
+The standard module called <code>json</code> can take Python data hierarchies, and convert
+them to string representations; this process is called <i>serializing</i>.<br  />
+Reconstructing the data from the string representation is called <i>deserializing</i>.
+</p>
+
+<p>
+Use <code>dumps()</code> function to view its JSON string representation.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; json.dumps([1, <span style="color: #2d9574;">'simple'</span>, <span style="color: #2d9574;">'list'</span>])
+<span style="color: #2d9574;">'[1, "simple", "list"]'</span>
+</pre>
+</div>
+<p>
+Another variant of the <code>dumps()</code> function, called <code>dump()</code>, simply serializes
+the object to a file.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">json.dump(x, f)
+</pre>
+</div>
+<p>
+To decode the object again:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #7590db;">x</span> = json.load(f)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline62" class="outline-2">
+<h2 id="orgheadline62"><span class="section-number-2">6</span> Errors and Exceptions</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-orgheadline55" class="outline-3">
+<h3 id="orgheadline55"><span class="section-number-3">6.1</span> Syntax Errors</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Most common.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline56" class="outline-3">
+<h3 id="orgheadline56"><span class="section-number-3">6.2</span> Exceptions</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+The last line of the error message indicates what happened.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline57" class="outline-3">
+<h3 id="orgheadline57"><span class="section-number-3">6.3</span> Handling Exceptions</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">while</span> <span style="color: #a45bad;">True</span>:
+...     <span style="color: #4f97d7; font-weight: bold;">try</span>:
+...         <span style="color: #7590db;">x</span> = <span style="color: #4f97d7;">int</span>(<span style="color: #4f97d7;">raw_input</span>(<span style="color: #2d9574;">"Please enter a number: "</span>))
+...         <span style="color: #4f97d7; font-weight: bold;">break</span>
+...     <span style="color: #4f97d7; font-weight: bold;">except</span> <span style="color: #ce537a; font-weight: bold;">ValueError</span>:
+...         <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">"Oops!  That was no valid number.  Try again..."</span>
+...
+</pre>
+</div>
+
+<blockquote>
+<p>
+The <code>try</code> statement works as follows:
+</p>
+<ul class="org-ul">
+<li>First, the <i>try</i> clause is executed.</li>
+<li>If no exception occurs, the <i>except</i> clause is skipped and execution of the
+<code>try</code> statement is finished.</li>
+<li>If an exception occurs, the rest of the clause is skipped. Then if its type
+<b>matches</b> the exception named after the <code>except</code> keyword, the except clause
+is executed.</li>
+<li>If an exception occurs which doesn't match the exception named, it is passed
+on to outer <code>try</code> statements; if no handler is found, it's an <i>unhandled</i>
+exception and execution stops with a message as shown above.</li>
+</ul>
+</blockquote>
+
+<p>
+Multiple exceptions
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">except</span> (<span style="color: #ce537a; font-weight: bold;">RuntimeError</span>, <span style="color: #ce537a; font-weight: bold;">TypeError</span>, <span style="color: #ce537a; font-weight: bold;">NameError</span>)
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Parentheses are required</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">'except ErrorName, e' was the syntax use for 'except ErrorName as e'</span>
+</pre>
+</div>
+
+<blockquote>
+<p>
+The <code>try ... except</code> statement has an optional <code>else</code> clause which <b>must</b>
+follow all except clauses.<br  />
+It's used for code that must be executed if there're no exceptions.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline58" class="outline-3">
+<h3 id="orgheadline58"><span class="section-number-3">6.4</span> Raise Exception</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+<code>raise</code> statement force a specified exception to occur. For example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">raise</span> <span style="color: #ce537a; font-weight: bold;">NameError</span>(<span style="color: #2d9574;">'HiThere'</span>)
+Traceback (most recent call last):
+  File <span style="color: #2d9574;">"&lt;stdin&gt;"</span>, line 1, <span style="color: #4f97d7; font-weight: bold;">in</span> ?
+<span style="color: #ce537a; font-weight: bold;">NameError</span>: HiThere
+</pre>
+</div>
+<blockquote>
+<p>
+The <b>sole</b> argument to <code>raise</code> indicates the exception to be raised<br  />
+A simpler form of the <code>raise</code> statement allows you to re-raise the exception
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline59" class="outline-3">
+<h3 id="orgheadline59"><span class="section-number-3">6.5</span> User-defined Exceptions</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+The defined exception class should be derived from the Exception class
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline60" class="outline-3">
+<h3 id="orgheadline60"><span class="section-number-3">6.6</span> Defining Clean-up Actions</h3>
+<div class="outline-text-3" id="text-6-6">
+<p>
+<code>finally</code> clause is intended to define clean-up actions that must be executed
+under all circumstances<br  />
+</p>
+<blockquote>
+<p>
+Always executed before leaving the <code>try</code> statement, whether an exception has
+occurred or not.<br  />
+Is executed after the exception which will be handled by an <code>except</code> clase,
+but before that has <b>not</b> been handled
+</p>
+
+<p>
+In real world applications, it's useful for releasing external resources (such
+as files or network connections)
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline61" class="outline-3">
+<h3 id="orgheadline61"><span class="section-number-3">6.7</span> Predefined Clean-up Actions</h3>
+<div class="outline-text-3" id="text-6-7">
+<p>
+<code>with</code> statement
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline77" class="outline-2">
+<h2 id="orgheadline77"><span class="section-number-2">7</span> Classes</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-orgheadline63" class="outline-3">
+<h3 id="orgheadline63"><span class="section-number-3">7.1</span> Python Scope rules</h3>
+<div class="outline-text-3" id="text-7-1">
+<ol class="org-ol">
+<li><code>namespace</code>: a mapping from names to objects
+<ol class="org-ol">
+<li>no relation between names in different namespaces</li>
+<li><code>attribute</code>: <b>any</b> name following a dot</li>
+<li>local namespace for a function is created when the function is called,
+and deleted when the function returns or raises an exception that is
+not handled within the function</li>
+</ol></li>
+<li><p>
+<code>scope</code>: textual region of a Python program where a namespace is
+<b>directly accessible</b> (an unqualified reference to a name attempts to find
+the name in the namespace)<br  />
+There are three nested scopes whose namespaces are directly accessible:
+</p>
+<ol class="org-ol">
+<li>the innermost scope, contains local names</li>
+<li>the scopes of any encloseing functions, contains non-local, also
+non-global names</li>
+<li>the next-to-last scope, contains the current module's global names</li>
+<li>the outermost scope, contains built-in names</li>
+</ol>
+<blockquote>
+<p>
+The search for names is done dynamically (at run time), while the language
+definition is evolving towards static name resolution (at 'compile' time)
+</p>
+</blockquote>
+<p class="verse">
+If no <code>global</code> statement is in effect<br  />
+assignments to names always go into the innermost scope<br  />
+<br  />
+Assignments do not copy data<br  />
+they just bind names to objects.<br  />
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline68" class="outline-3">
+<h3 id="orgheadline68"><span class="section-number-3">7.2</span> Class</h3>
+<div class="outline-text-3" id="text-7-2">
+</div><div id="outline-container-orgheadline64" class="outline-4">
+<h4 id="orgheadline64"><span class="section-number-4">7.2.1</span> Class Objects</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<p>
+Two kind of operations:
+</p>
+<ol class="org-ol">
+<li><p>
+<code>attribute reference</code> : <code>obj.name</code>, for example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">MyClass</span>:
+    <span style="color: #2d9574;">"""A simple example class"""</span>
+    <span style="color: #7590db;">i</span> = 12345
+
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">f</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>):
+        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #2d9574;">'hello world'</span>
+</pre>
+</div>
+<p>
+then <code>MyClass.i</code> and <code>MyClass.f</code> are valid attribute references
+</p>
+<blockquote>
+<p>
+<code>__doc__</code> is also a valid attribute,<br  />
+returning the docstring belonging to the class
+</p>
+</blockquote></li>
+<li><p>
+<code>instantiation</code>
+</p>
+<pre class="example">
+x = MyClass()
+</pre>
+<p>
+creates a new instance of the class and assigns this object to <code>x</code><br  />
+Many classes like to create objects with instances customized to a
+specific initial state, by defining a special method <code>__init()__</code>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>):
+    <span style="color: #4f97d7; font-weight: bold;">self</span>.data = []
+</pre>
+</div>
+<p>
+the <code>__init()__</code> method may have arguments
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Complex</span>:
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>, realpart, imagpart):
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.r = realpart
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.i = imagpart
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline65" class="outline-4">
+<h4 id="orgheadline65"><span class="section-number-4">7.2.2</span> Instance Objects</h4>
+<div class="outline-text-4" id="text-7-2-2">
+<blockquote>
+<p>
+The only operations understood by instance objects are <b>attribute references</b>
+</p>
+</blockquote>
+<ol class="org-ol">
+<li><code>data attribute</code></li>
+<li><p>
+<code>method</code>
+</p>
+<blockquote>
+<p>
+A method is a function that "belong to" an object
+</p>
+</blockquote></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline66" class="outline-4">
+<h4 id="orgheadline66"><span class="section-number-4">7.2.3</span> Method Objects</h4>
+<div class="outline-text-4" id="text-7-2-3">
+<p>
+A method is called right after it is bound:
+</p>
+<pre class="example">
+x.f()
+</pre>
+<p>
+Actually, the function <code>f</code> have an argument <code>self</code>, however, the special
+thing about methods is that the object is passed as the <b>first argument</b> of
+the function.
+</p>
+<pre class="example">
+x.f() means MyClass.f(x)
+</pre>
+<blockquote>
+<p>
+So this explains the first argument <code>self</code>, which has confused me for a long
+time
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline67" class="outline-4">
+<h4 id="orgheadline67"><span class="section-number-4">7.2.4</span> Class and Instance Variables</h4>
+<div class="outline-text-4" id="text-7-2-4">
+<p class="verse">
+Instance variables are for data unique to each instance<br  />
+Class variables are for attributes and methods shared by all instances<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline69" class="outline-3">
+<h3 id="orgheadline69"><span class="section-number-3">7.3</span> Random Remarks</h3>
+<div class="outline-text-3" id="text-7-3">
+<p class="verse">
+Each value is an object<br  />
+therefore has a class (<i>type</i>)<br  />
+It is stored as ~object._<sub>class</sub>__'<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline71" class="outline-3">
+<h3 id="orgheadline71"><span class="section-number-3">7.4</span> Inheritance</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+A derived class definition:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">DerivedClassName</span>(BaseClassName):
+    &lt;statements&gt;
+</pre>
+</div>
+<ol class="org-ol">
+<li><p>
+<code>isinstance()</code> to check an instance's type
+</p>
+<pre class="example">
+isinstance(obj, int) will be True only if obj.__class__ is int
+or some class derived from int
+</pre></li>
+<li><p>
+<code>issubclass()</code> to check class inheritance
+</p>
+<pre class="example">
+issubclass(bool, int) is True since bool is a subclass of int
+however, issubclass(unicode, str) is False, since unicode is not
+a subclass of str (they only share a common ancestor, basestring)
+</pre></li>
+</ol>
+</div>
+
+<div id="outline-container-orgheadline70" class="outline-4">
+<h4 id="orgheadline70"><span class="section-number-4">7.4.1</span> Multiple Inheritance</h4>
+<div class="outline-text-4" id="text-7-4-1">
+<p>
+Python supports a limited form of multiple inheritance:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">DerivedClassName</span>(Base1, Base2, Base3):
+    &lt;statements&gt;
+</pre>
+</div>
+<p>
+For old-style classes, the only rule is depth-first, left-to-right<br  />
+For new-style classes, the method resolution order changes dynamically
+to support cooperative calls to <code>super()</code>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline72" class="outline-3">
+<h3 id="orgheadline72"><span class="section-number-3">7.5</span> Private Variables and Class-local References</h3>
+<div class="outline-text-3" id="text-7-5">
+<blockquote>
+<p>
+There is no private instance variables
+</p>
+</blockquote>
+<p>
+However, there is a convention that is followed by most Python code: a name
+prefixed with underscore (e.g. <code>_spam</code>) should be treated as a non-public
+part of the API (whether it is a function, a method or a data member)
+</p>
+
+<blockquote>
+<p>
+Any identifier of the form <code>__spam</code> (at least two leading underscores, at
+most one trailing underscore) is textually replaced with <code>_classname__spam</code>,
+where <code>classname</code> is the current class name with leading underscore stripped.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline73" class="outline-3">
+<h3 id="orgheadline73"><span class="section-number-3">7.6</span> Exceptions are classes too</h3>
+<div class="outline-text-3" id="text-7-6">
+<p>
+Two new valid forms for the <code>raise</code> statement:
+</p>
+<pre class="example">
+raise Class, instance ## instance must be an instance of class
+raise instance ## shorthand for raise instance.__class__, instance
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline74" class="outline-3">
+<h3 id="orgheadline74"><span class="section-number-3">7.7</span> Iterators</h3>
+<div class="outline-text-3" id="text-7-7">
+<p>
+<code>for</code> statement calls <code>iter()</code> on the container object<br  />
+The function returns an iterator object that defines the method <code>next()</code>
+Which accesses elements in the container one at a time<br  />
+When there are no more elements, <code>next()</code> raises a <code>StopIteration</code> exception
+Which tells the <code>for</code> loop to terminate
+</p>
+
+<p>
+Having seen the mechanics behind the iterator protocol<br  />
+We can define an <code>__iter__()</code> method which returns an object with a <code>next()</code>
+method
+</p>
+<blockquote>
+<p>
+If the class defines <code>next()</code>, then <code>__iter__()</code> can just return <code>self</code>
+</p>
+</blockquote>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #7590db;">L</span> = []
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Reverse</span>:
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>, data):
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.data = data
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.index = <span style="color: #4f97d7;">len</span>(data)
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__iter__</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>):
+        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7; font-weight: bold;">self</span>
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">next</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>):
+        <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7; font-weight: bold;">self</span>.index == 0:
+            <span style="color: #4f97d7; font-weight: bold;">raise</span> <span style="color: #ce537a; font-weight: bold;">StopIteration</span>
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.index = <span style="color: #4f97d7; font-weight: bold;">self</span>.index - 1
+        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7; font-weight: bold;">self</span>.data[<span style="color: #4f97d7; font-weight: bold;">self</span>.index]
+
+<span style="color: #7590db;">rev</span> = Reverse(<span style="color: #2d9574;">'spam'</span>)
+<span style="color: #4f97d7; font-weight: bold;">for</span> char <span style="color: #4f97d7; font-weight: bold;">in</span> rev:
+    L.append(char)
+<span style="color: #4f97d7; font-weight: bold;">return</span> L
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline75" class="outline-3">
+<h3 id="orgheadline75"><span class="section-number-3">7.8</span> Generators</h3>
+<div class="outline-text-3" id="text-7-8">
+<p>
+A simple and powerful tool for creating iterators<br  />
+They are written like regular functions but use the <code>yield</code> statement whenever
+they want to return data<br  />
+For example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #7590db;">L</span> = []
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">reverse</span>(data):
+    <span style="color: #4f97d7; font-weight: bold;">for</span> index <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(<span style="color: #4f97d7;">len</span>(data)-1, -1, -1):
+        <span style="color: #4f97d7; font-weight: bold;">yield</span> data[index]
+
+<span style="color: #4f97d7; font-weight: bold;">for</span> char <span style="color: #4f97d7; font-weight: bold;">in</span> reverse(<span style="color: #2d9574;">'golf'</span>):
+    L.append(char)
+<span style="color: #4f97d7; font-weight: bold;">return</span> L
+</pre>
+</div>
+
+<p>
+These features make it easy to create iterators with no more effort than
+writing a regular function
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline76" class="outline-3">
+<h3 id="orgheadline76"><span class="section-number-3">7.9</span> Generator Expressions</h3>
+<div class="outline-text-3" id="text-7-9">
+<p>
+Simple generators can be coded succinctly as expressions using a syntax
+similar to list comprehensions but with parentheses instead of bracket
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7;">sum</span>(i**2 <span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(10))    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">sum of squares</span>
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">from</span> math <span style="color: #4f97d7; font-weight: bold;">import</span> pi, sin
+&gt;&gt;&gt; <span style="color: #7590db;">sine_table</span> = <span style="color: #4f97d7;">dict</span>((x, sin(x*pi/180)) <span style="color: #4f97d7; font-weight: bold;">for</span> x <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(0.91))
+&gt;&gt;&gt; <span style="color: #7590db;">unique_words</span> = <span style="color: #4f97d7;">set</span>(word <span style="color: #4f97d7; font-weight: bold;">for</span> line <span style="color: #4f97d7; font-weight: bold;">in</span> page <span style="color: #4f97d7; font-weight: bold;">for</span> word <span style="color: #4f97d7; font-weight: bold;">in</span> line.split())
+&gt;&gt;&gt; <span style="color: #7590db;">valedictorian</span> = <span style="color: #4f97d7;">max</span>((student.gpa, student.name) <span style="color: #4f97d7; font-weight: bold;">for</span> student <span style="color: #4f97d7; font-weight: bold;">in</span> graduates)
+&gt;&gt;&gt; <span style="color: #7590db;">data</span> = <span style="color: #2d9574;">'golf'</span>
+&gt;&gt;&gt; <span style="color: #4f97d7;">list</span>(data[i] <span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(<span style="color: #4f97d7;">len</span>(data)-1, -1, -1))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline111" class="outline-2">
+<h2 id="orgheadline111"><span class="section-number-2">8</span> Standard Library</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-orgheadline80" class="outline-3">
+<h3 id="orgheadline80"><span class="section-number-3">8.1</span> Operating System Interface</h3>
+<div class="outline-text-3" id="text-8-1">
+</div><div id="outline-container-orgheadline78" class="outline-4">
+<h4 id="orgheadline78"><span class="section-number-4">8.1.1</span> <code>OS</code> module</h4>
+<div class="outline-text-4" id="text-8-1-1">
+<p>
+Provides dozens of functions for interacting with the operating system
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> os
+os.getcwd()                     <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Return the current working directory</span>
+os.chdir(<span style="color: #2d9574;">'/server/accesslogs'</span>)  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Change current working directory</span>
+os.system(<span style="color: #2d9574;">'mkdir today'</span>)        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Run the command mkdir in the system shell</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline79" class="outline-4">
+<h4 id="orgheadline79"><span class="section-number-4">8.1.2</span> <code>shutil</code> module</h4>
+<div class="outline-text-4" id="text-8-1-2">
+<p>
+For daily file and directory management tasks
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> shutil
+shutil.copyfile(<span style="color: #2d9574;">'data.db'</span>, <span style="color: #2d9574;">'archive.db'</span>)
+shutil.move(<span style="color: #2d9574;">'/build/executables'</span>, <span style="color: #2d9574;">'installdir'</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline81" class="outline-3">
+<h3 id="orgheadline81"><span class="section-number-3">8.2</span> File Wildcards</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+<code>glob</code> module provides a function for making file lists from directory
+wildcard searches:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> glob
+glob.glob(<span style="color: #2d9574;">'*.py'</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline82" class="outline-3">
+<h3 id="orgheadline82"><span class="section-number-3">8.3</span> Command Line Arguments</h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+Arguments are stored in the <code>sys</code> module's argv attributes as a list
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> sys
+<span style="color: #4f97d7; font-weight: bold;">print</span> sys.argv
+</pre>
+</div>
+<p>
+The <code>getopt</code> module processes sys.argv using the conventions of the Unix
+<code>getopt()</code> function<br  />
+More powerful and flexible command line processing is provided by the
+<code>argparse</code> module
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline83" class="outline-3">
+<h3 id="orgheadline83"><span class="section-number-3">8.4</span> Error Output Redirection and Program Termination</h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+<code>sys</code> module has attributes for <i>stdin</i>, <i>stdout</i>, and <i>stderr</i> <br  />
+The most direct way to terminate a script is to use <code>sys.exit()</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline84" class="outline-3">
+<h3 id="orgheadline84"><span class="section-number-3">8.5</span> String Pattern Matching</h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+<code>re</code> module provides regular expression tools for advanced string processing
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> re
+&gt;&gt;&gt; re.findall(r<span style="color: #2d9574;">'\bf[a-z]*'</span>, <span style="color: #2d9574;">'which foot or hand fell fastest'</span>)
+[<span style="color: #2d9574;">'foot'</span>, <span style="color: #2d9574;">'fell'</span>, <span style="color: #2d9574;">'fastest'</span>]
+&gt;&gt;&gt; re.sub(r<span style="color: #2d9574;">'(\b[a-z]+) \1'</span>, r<span style="color: #2d9574;">'\1'</span>, <span style="color: #2d9574;">'cat in the the hat'</span>)
+<span style="color: #2d9574;">'cat in the hat'</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline87" class="outline-3">
+<h3 id="orgheadline87"><span class="section-number-3">8.6</span> Mathematics</h3>
+<div class="outline-text-3" id="text-8-6">
+</div><div id="outline-container-orgheadline85" class="outline-4">
+<h4 id="orgheadline85"><span class="section-number-4">8.6.1</span> <code>math</code> module</h4>
+<div class="outline-text-4" id="text-8-6-1">
+<p>
+Gives access to the underlying C library functions for floating point math:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> math
+&gt;&gt;&gt; math.cos(math.pi / 4.0)
+&gt;&gt;&gt; math.log(1024, 2)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline86" class="outline-4">
+<h4 id="orgheadline86"><span class="section-number-4">8.6.2</span> <code>random</code> module</h4>
+<div class="outline-text-4" id="text-8-6-2">
+<p>
+Provides tools for making ramdom selections
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> random
+&gt;&gt;&gt; random.choice([<span style="color: #2d9574;">'apple'</span>, <span style="color: #2d9574;">'pear'</span>, <span style="color: #2d9574;">'banana'</span>])
+<span style="color: #2d9574;">'apple'</span>
+&gt;&gt;&gt; random.sample(<span style="color: #4f97d7;">xrange</span>(100), 10)   <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">sampling without replacement</span>
+[30, 83, 16, 4, 8, 81, 41, 50, 18, 33]
+&gt;&gt;&gt; random.random()    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">random float</span>
+0.17970987693706186
+&gt;&gt;&gt; random.randrange(6)    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">random integer chosen from range(6)</span>
+4
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline90" class="outline-3">
+<h3 id="orgheadline90"><span class="section-number-3">8.7</span> Internet Access</h3>
+<div class="outline-text-3" id="text-8-7">
+</div><div id="outline-container-orgheadline88" class="outline-4">
+<h4 id="orgheadline88"><span class="section-number-4">8.7.1</span> <code>urllib2</code> module</h4>
+<div class="outline-text-4" id="text-8-7-1">
+<p>
+Retrieving data from URLs
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #7590db;">L</span> = []
+<span style="color: #4f97d7; font-weight: bold;">import</span> urllib2
+<span style="color: #4f97d7; font-weight: bold;">for</span> line <span style="color: #4f97d7; font-weight: bold;">in</span> urllib2.urlopen(<span style="color: #2d9574;">'http://tycho.usno.navy.mil/cgi-bin/timer.pl'</span>):
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">'EST'</span> <span style="color: #4f97d7; font-weight: bold;">in</span> line <span style="color: #4f97d7; font-weight: bold;">or</span> <span style="color: #2d9574;">'EDT'</span> <span style="color: #4f97d7; font-weight: bold;">in</span> line:
+        L.append(line)
+<span style="color: #4f97d7; font-weight: bold;">return</span> L
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline89" class="outline-4">
+<h4 id="orgheadline89"><span class="section-number-4">8.7.2</span> <code>smtplib</code> module</h4>
+<div class="outline-text-4" id="text-8-7-2">
+<p>
+Sending mail
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> smtplib
+<span style="color: #7590db;">server</span> = smtplib.SMTP(<span style="color: #2d9574;">'localhost'</span>)
+server.sendmail(<span style="color: #2d9574;">'fichtl1993@163.com'</span>, <span style="color: #2d9574;">'fichtl1993@gmail.com'</span>,
+                <span style="color: #2d9574;">"""To: fichtl1993@gmail.com</span>
+<span style="color: #2d9574;">                From: fichtl1993@163.com</span>
+
+<span style="color: #2d9574;">                Hello, Can you hear me ?</span>
+<span style="color: #2d9574;">                """</span>)
+server.<span style="color: #a45bad;">quit</span>()
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline91" class="outline-3">
+<h3 id="orgheadline91"><span class="section-number-3">8.8</span> Dates and Times</h3>
+<div class="outline-text-3" id="text-8-8">
+<p>
+<code>datetime</code> module
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="linenr">1: </span><span style="color: #4f97d7; font-weight: bold;">from</span> datetime <span style="color: #4f97d7; font-weight: bold;">import</span> date
+<span class="linenr">2: </span><span style="color: #7590db;">now</span> = date.today()
+<span class="linenr">3: </span><span style="color: #4f97d7; font-weight: bold;">return</span> now.strftime(<span style="color: #2d9574;">"%m-%d-%y. %d %b %Y is a %A on the %d day of %B."</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="linenr">4: </span><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">dates support calendar arithmetic</span>
+<span class="linenr">5: </span><span style="color: #4f97d7; font-weight: bold;">from</span> datetime <span style="color: #4f97d7; font-weight: bold;">import</span> date
+<span class="linenr">6: </span><span style="color: #7590db;">now</span> = date.today()
+<span class="linenr">7: </span><span style="color: #7590db;">birthday</span> = date(1993, 7, 14)
+<span class="linenr">8: </span><span style="color: #7590db;">age</span> = now - birthday
+<span class="linenr">9: </span><span style="color: #4f97d7; font-weight: bold;">return</span> age.days/365
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline92" class="outline-3">
+<h3 id="orgheadline92"><span class="section-number-3">8.9</span> Data Compression</h3>
+<div class="outline-text-3" id="text-8-9">
+<p>
+Common data archiving and compression formats are directly supported by modules
+including: <code>zlib, gzip, bz2, zipfile, tarfile</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> zlib
+<span style="color: #7590db;">s</span> = <span style="color: #2d9574;">'witch which has which witches wrist watch'</span>
+<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">len</span>(s)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> zlib
+<span style="color: #7590db;">s</span> = <span style="color: #2d9574;">'witch which has which witches wrist watch'</span>
+<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">len</span>(zlib.compress(s))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline93" class="outline-3">
+<h3 id="orgheadline93"><span class="section-number-3">8.10</span> Performance Measurement</h3>
+<div class="outline-text-3" id="text-8-10">
+<p>
+Python provides a measurement tool that compares the relative performance of
+different approaches to the same problem
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">from</span> timeit <span style="color: #4f97d7; font-weight: bold;">import</span> Timer
+&gt;&gt;&gt; Timer(<span style="color: #2d9574;">'t=a; a=b; b=t'</span>, <span style="color: #2d9574;">'a=1; b=2'</span>).timeit()
+0.57535828626024577
+&gt;&gt;&gt; Timer(<span style="color: #2d9574;">'a,b = b,a'</span>, <span style="color: #2d9574;">'a=1; b=2'</span>).timeit()
+0.54962537085770791
+</pre>
+</div>
+<p>
+In contrast to <code>timeit</code>'s fine level of granularity, the <code>profile</code>, <code>pstats</code>
+modules provide tools for identifying time critial sections in larger blocks
+of code
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline96" class="outline-3">
+<h3 id="orgheadline96"><span class="section-number-3">8.11</span> Quality Control</h3>
+<div class="outline-text-3" id="text-8-11">
+</div><div id="outline-container-orgheadline94" class="outline-4">
+<h4 id="orgheadline94"><span class="section-number-4">8.11.1</span> <code>doctest</code> module</h4>
+<div class="outline-text-4" id="text-8-11-1">
+<p>
+Provides a tool for scanning a module and validating tests
+<b>embedded in a program's docstrings</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">average</span>(values):
+    <span style="color: #2d9574;">"""Computes the arithmetic mean of a list of numbers.</span>
+
+<span style="color: #2d9574;">    &gt;&gt;&gt; print average([20, 30, 70])</span>
+<span style="color: #2d9574;">    40.0</span>
+<span style="color: #2d9574;">    """</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">sum</span>(values, 0.0) / <span style="color: #4f97d7;">len</span>(values)
+
+<span style="color: #4f97d7; font-weight: bold;">import</span> doctest
+doctest.testmod()   <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">automatically validate the embedded tests</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline95" class="outline-4">
+<h4 id="orgheadline95"><span class="section-number-4">8.11.2</span> <code>unittest</code> module</h4>
+<div class="outline-text-4" id="text-8-11-2">
+<p>
+It allows a more comprehensive set of tests to be maintained in a seperated
+file:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> unittest
+
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">TestStatisticalFunctions</span>(unittest.TestCase):
+
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">test_average</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>):
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.assertEqual(average([20, 30, 70]), 40.0)
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.assertEqual(<span style="color: #4f97d7;">round</span>(average([1, 5, 7]), 1), 4.3)
+        <span style="color: #4f97d7; font-weight: bold;">with</span> <span style="color: #4f97d7; font-weight: bold;">self</span>.assertRaises(<span style="color: #ce537a; font-weight: bold;">ZeroDivisionError</span>):
+            average([])
+        <span style="color: #4f97d7; font-weight: bold;">with</span> <span style="color: #4f97d7; font-weight: bold;">self</span>.assertRaises(<span style="color: #ce537a; font-weight: bold;">TypeError</span>):
+            average(20, 30, 70)
+
+unittest.main() <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Calling from the command line invokes all tests</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline97" class="outline-3">
+<h3 id="orgheadline97"><span class="section-number-3">8.12</span> Batteries Included</h3>
+<div class="outline-text-3" id="text-8-12">
+<ol class="org-ol">
+<li><code>xmlrpclib</code> and <code>SimpleXMLRPCServer</code> modules make implementing remote
+procedure calls into an almost trivial task</li>
+<li><code>email</code> pakcage is a library for managing email messages<br  />
+it has a complete toolset for building or decoding complex message
+structures (including attachments) and for implementing internet encoding
+and header protocols</li>
+<li><code>xml.dom</code> and <code>xml.sax</code> packages provide robust support for parsing xml</li>
+<li>Internationalization is supported by a number of modules including <code>gettex</code>,
+<code>locale</code>, and the <code>codecs</code> package</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline110" class="outline-3">
+<h3 id="orgheadline110"><span class="section-number-3">8.13</span> Advanced modules</h3>
+<div class="outline-text-3" id="text-8-13">
+</div><div id="outline-container-orgheadline98" class="outline-4">
+<h4 id="orgheadline98"><span class="section-number-4">8.13.1</span> Output Formatting</h4>
+<div class="outline-text-4" id="text-8-13-1">
+<ol class="org-ol">
+<li><p>
+<code>repr</code> module: provides a version of <code>repr()</code> customized for abbreviated
+displays of large or deeply nested containers:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #4f97d7;">repr</span>
+<span style="color: #7590db;">s</span> = <span style="color: #2d9574;">'supercalifragilisticexpialidocious'</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">return set(s)</span>
+<span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">repr</span>.<span style="color: #4f97d7;">repr</span>(<span style="color: #4f97d7;">set</span>(s))
+</pre>
+</div>
+
+<p>
+#+RESULTS for set(s):
+</p>
+<pre class="example">
+set(['a', 'c', 'e', 'd', 'g', 'f', 'i', 'l', 'o', 'p', 's', 'r', 'u', 't', 'x'])
+</pre></li>
+<li><p>
+<code>pprint</code> module: print objects in a way that is readable by the interpreter
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> pprint
+&gt;&gt;&gt; <span style="color: #7590db;">t</span> = [[[[<span style="color: #2d9574;">'black'</span>, <span style="color: #2d9574;">'cyan'</span>], <span style="color: #2d9574;">'white'</span>, [<span style="color: #2d9574;">'green'</span>, <span style="color: #2d9574;">'red'</span>]], [[<span style="color: #2d9574;">'magenta'</span>, <span style="color: #2d9574;">'yellow'</span>], <span style="color: #2d9574;">'blue'</span>]]]
+&gt;&gt;&gt; pprint.pprint(t, width = 30)
+[[[[<span style="color: #2d9574;">'black'</span>, <span style="color: #2d9574;">'cyan'</span>],
+   <span style="color: #2d9574;">'white'</span>,
+   [<span style="color: #2d9574;">'green'</span>, <span style="color: #2d9574;">'red'</span>]],
+  [[<span style="color: #2d9574;">'magenta'</span>, <span style="color: #2d9574;">'yellow'</span>],
+   <span style="color: #2d9574;">'blue'</span>]]]
+</pre>
+</div></li>
+<li><p>
+<code>textwrap</code> module: formats paragraphs of text to fit a given screen width
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> textwrap
+<span style="color: #7590db;">doc</span> = <span style="color: #2d9574;">"""The wrap() method is just like fill() except that it returns a list of strings instead of one big string with newlines to separate the wrapped lines."""</span>
+
+<span style="color: #4f97d7; font-weight: bold;">return</span> textwrap.fill(doc, width=40)
+</pre>
+</div></li>
+<li><p>
+<code>locale</code> module: database of culture specific data formats
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> locale
+&gt;&gt;&gt; locale.setlocale(locale.LC_ALL, <span style="color: #2d9574;">'English_United States.1252'</span>)
+<span style="color: #2d9574;">'English_United States.1252'</span>
+&gt;&gt;&gt; <span style="color: #7590db;">conv</span> = locale.localeconv()          <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">get a mapping of conventions</span>
+&gt;&gt;&gt; <span style="color: #7590db;">x</span> = 1234567.8
+&gt;&gt;&gt; locale.<span style="color: #4f97d7;">format</span>(<span style="color: #2d9574;">"%d"</span>, x, grouping=<span style="color: #a45bad;">True</span>)
+<span style="color: #2d9574;">'1,234,567'</span>
+&gt;&gt;&gt; locale.format_string(<span style="color: #2d9574;">"%s%.*f"</span>, (conv[<span style="color: #2d9574;">'currency_symbol'</span>],
+...                      conv[<span style="color: #2d9574;">'frac_digits'</span>], x), grouping=<span style="color: #a45bad;">True</span>)
+<span style="color: #2d9574;">'$1,234,567.80'</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline99" class="outline-4">
+<h4 id="orgheadline99"><span class="section-number-4">8.13.2</span> Templating</h4>
+<div class="outline-text-4" id="text-8-13-2">
+<p>
+<code>string</code> module includes a versatile <code>Template</code> class for editing by end-users.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> string <span style="color: #4f97d7; font-weight: bold;">import</span> Template
+<span style="color: #7590db;">t</span> = Template(<span style="color: #2d9574;">'${village}folk send $$10 to $cause.'</span>)
+<span style="color: #4f97d7; font-weight: bold;">return</span> t.substitute(village=<span style="color: #2d9574;">'Nottingham'</span>, cause=<span style="color: #2d9574;">'the ditch fund'</span>)
+</pre>
+</div>
+
+<p>
+<code>substitute()</code> may raise a <code>KeyError</code> when a placeholder is not supplied in
+a dictionary or a keyword argument.<br  />
+<code>safe_substitute()</code> may be more approprite
+</p>
+
+<p>
+Template subclasses can specify a <b>custom delimiter</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> os.path
+<span style="color: #4f97d7; font-weight: bold;">from</span> string <span style="color: #4f97d7; font-weight: bold;">import</span> Template
+
+<span style="color: #7590db;">L</span> = []
+<span style="color: #7590db;">photofiles</span> = [<span style="color: #2d9574;">'img_1074.jpg'</span>, <span style="color: #2d9574;">'img_1076.jpg'</span>, <span style="color: #2d9574;">'img_1077.jpg'</span>]
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">BatchRename</span>(Template):
+    <span style="color: #7590db;">delimiter</span> = <span style="color: #2d9574;">'|'</span>
+<span style="color: #7590db;">fmt</span> = <span style="color: #2d9574;">'Ashley_|n|f'</span>
+<span style="color: #7590db;">t</span> = BatchRename(fmt)
+<span style="color: #4f97d7; font-weight: bold;">for</span> i, filename <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>(photofiles):
+    <span style="color: #7590db;">base</span>, <span style="color: #7590db;">ext</span> = os.path.splitext(filename)
+    <span style="color: #7590db;">newname</span> = t.substitute(n=i, f=ext)
+    L.append(<span style="color: #2d9574;">'{0} --&gt; {1}'</span>.<span style="color: #4f97d7;">format</span>(filename, newname))
+
+<span style="color: #4f97d7; font-weight: bold;">return</span> L
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline100" class="outline-4">
+<h4 id="orgheadline100"><span class="section-number-4">8.13.3</span> Binary Data Record Layouts</h4>
+<div class="outline-text-4" id="text-8-13-3">
+<p>
+<code>struct</code> module provides <code>pack()</code> and <code>unpack()</code> functions for working with
+variable length binary record formats<br  />
+Pack codes <code>H</code> and <code>I</code> represent two and four byte unsigned numbers
+respectively. The <code>&lt;</code> indicates that they are standard size and in
+little-endian byte order:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> struct
+
+<span style="color: #7590db;">data</span> = <span style="color: #4f97d7;">open</span>(<span style="color: #2d9574;">'myfile.zip'</span>, <span style="color: #2d9574;">'rb'</span>).read()
+<span style="color: #7590db;">start</span> = 0
+<span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(3):                      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">show the first 3 file headers</span>
+    <span style="color: #7590db;">start</span> += 14
+    <span style="color: #7590db;">fields</span> = struct.unpack(<span style="color: #2d9574;">'&lt;IIIHH'</span>, data[start:start+16])
+    <span style="color: #7590db;">crc32</span>, <span style="color: #7590db;">comp_size</span>, <span style="color: #7590db;">uncomp_size</span>, <span style="color: #7590db;">filenamesize</span>, <span style="color: #7590db;">extra_size</span> = fields
+
+    <span style="color: #7590db;">start</span> += 16
+    <span style="color: #7590db;">filename</span> = data[start:start+filenamesize]
+    <span style="color: #7590db;">start</span> += filenamesize
+    <span style="color: #7590db;">extra</span> = data[start:start+extra_size]
+    <span style="color: #4f97d7; font-weight: bold;">print</span> filename, <span style="color: #4f97d7;">hex</span>(crc32), comp_size, uncomp_size
+
+    <span style="color: #7590db;">start</span> += extra_size + comp_size     <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">skip to the next header</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline101" class="outline-4">
+<h4 id="orgheadline101"><span class="section-number-4">8.13.4</span> Multi-threading</h4>
+<div class="outline-text-4" id="text-8-13-4">
+<p>
+The following code shows how the high level <code>threading</code> module can run tasks
+in background while the main program continues to run:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> threading, zipfile
+
+<span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">AsyncZip</span>(threading.Thread):
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">__init__</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>, infile, outfile):
+        threading.Thread.__init__(<span style="color: #4f97d7; font-weight: bold;">self</span>)
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.infile = infile
+        <span style="color: #4f97d7; font-weight: bold;">self</span>.outfile = outfile
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">run</span>(<span style="color: #4f97d7; font-weight: bold;">self</span>):
+        <span style="color: #7590db;">f</span> = zipfile.ZipFile(<span style="color: #4f97d7; font-weight: bold;">self</span>.outfile, <span style="color: #2d9574;">'w'</span>, zipfile.ZIP_DEFLATED)
+        f.write(<span style="color: #4f97d7; font-weight: bold;">self</span>.infile)
+        f.close()
+        <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'Finished background zip of: '</span>, <span style="color: #4f97d7; font-weight: bold;">self</span>.infile
+
+<span style="color: #7590db;">background</span> = AsyncZip(<span style="color: #2d9574;">'mydata.txt'</span>, <span style="color: #2d9574;">'myarchive.zip'</span>)
+background.start()
+<span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'The main program continues to run in foreground.'</span>
+
+background.join()    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Wait for the background task to finish</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">'Main program waited until background was done.'</span>
+</pre>
+</div>
+<blockquote>
+<p>
+<code>object.join()</code> function will make the program wait until the object is finished
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline102" class="outline-4">
+<h4 id="orgheadline102"><span class="section-number-4">8.13.5</span> Logging</h4>
+<div class="outline-text-4" id="text-8-13-5">
+<p>
+<code>logging</code> module offers a full featured and flexible logging system
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> logging
+logging.debug(<span style="color: #2d9574;">'Debugging information'</span>)
+logging.info(<span style="color: #2d9574;">'Informational message'</span>)
+logging.warning(<span style="color: #2d9574;">'Warning:config file %s not found'</span>, <span style="color: #2d9574;">'server.conf'</span>)
+logging.error(<span style="color: #2d9574;">'Error occurred'</span>)
+logging.critical(<span style="color: #2d9574;">'Critical error -- shutting down'</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline103" class="outline-4">
+<h4 id="orgheadline103"><span class="section-number-4">8.13.6</span> Weak References</h4>
+<div class="outline-text-4" id="text-8-13-6">
+<p>
+<code>weakref</code> module provides tools for tracking objects without creating a
+reference<br  />
+<code>gc</code> module (garbage collection) to collect garbage
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline108" class="outline-4">
+<h4 id="orgheadline108"><span class="section-number-4">8.13.7</span> Tools for Working with Lists</h4>
+<div class="outline-text-4" id="text-8-13-7">
+</div><div id="outline-container-orgheadline104" class="outline-5">
+<h5 id="orgheadline104"><span class="section-number-5">8.13.7.1</span> <code>array</code> module</h5>
+<div class="outline-text-5" id="text-8-13-7-1">
+<p>
+provides an <code>array()</code> object that is like a list that stores only
+<b>homogeneous data</b> and stores it more compactly.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">from</span> array <span style="color: #4f97d7; font-weight: bold;">import</span> array
+&gt;&gt;&gt; <span style="color: #7590db;">a</span> = array(<span style="color: #2d9574;">'H'</span>, [4000, 10, 700, 22222])
+&gt;&gt;&gt; <span style="color: #4f97d7;">sum</span>(a)
+26932
+&gt;&gt;&gt; a[1:3]
+array(<span style="color: #2d9574;">'H'</span>, [10, 700])
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline105" class="outline-5">
+<h5 id="orgheadline105"><span class="section-number-5">8.13.7.2</span> <code>collections</code> module</h5>
+<div class="outline-text-5" id="text-8-13-7-2">
+<p>
+provides a <code>deque()</code> object that is like a list with faster appends and pops
+from the <b>left</b> side but slower lookups in the middle
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">from</span> collections <span style="color: #4f97d7; font-weight: bold;">import</span> deque
+&gt;&gt;&gt; <span style="color: #7590db;">d</span> = deque([<span style="color: #2d9574;">"task1"</span>, <span style="color: #2d9574;">"task2"</span>, <span style="color: #2d9574;">"task3"</span>])
+&gt;&gt;&gt; d.append(<span style="color: #2d9574;">"task4"</span>)
+&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #2d9574;">"Handling"</span>, d.popleft()
+Handling task1
+</pre>
+</div>
+<blockquote>
+<p>
+These objects are well suited for implementing queues and breadth first tree
+searches
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline106" class="outline-5">
+<h5 id="orgheadline106"><span class="section-number-5">8.13.7.3</span> <code>bisect</code> module</h5>
+<div class="outline-text-5" id="text-8-13-7-3">
+<p>
+provides support for maintaining a list in sorted order without having to
+sort the list after each insertion
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">import</span> bisect
+&gt;&gt;&gt; <span style="color: #7590db;">scores</span> = [(100, <span style="color: #2d9574;">'perl'</span>), (200, <span style="color: #2d9574;">'tcl'</span>), (400, <span style="color: #2d9574;">'lua'</span>), (500, <span style="color: #2d9574;">'python'</span>)]
+&gt;&gt;&gt; bisect.insort(scores, (300, <span style="color: #2d9574;">'ruby'</span>))
+&gt;&gt;&gt; scores
+[(100, <span style="color: #2d9574;">'perl'</span>), (200, <span style="color: #2d9574;">'tcl'</span>), (300, <span style="color: #2d9574;">'ruby'</span>), (400, <span style="color: #2d9574;">'lua'</span>), (500, <span style="color: #2d9574;">'python'</span>)]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline107" class="outline-5">
+<h5 id="orgheadline107"><span class="section-number-5">8.13.7.4</span> <code>heapq</code> module</h5>
+<div class="outline-text-5" id="text-8-13-7-4">
+<p>
+provides functions for implementing heaps based on regular lists
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #4f97d7; font-weight: bold;">from</span> heapq <span style="color: #4f97d7; font-weight: bold;">import</span> heapify, heappop, heappush
+&gt;&gt;&gt; <span style="color: #7590db;">data</span> = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
+&gt;&gt;&gt; heapify(data)                      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">rearrange the list into heap order</span>
+&gt;&gt;&gt; heappush(data, -5)                 <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">add a new entry</span>
+&gt;&gt;&gt; [heappop(data) <span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span>(3)]  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">fetch the three smallest entries</span>
+[-5, 0, 1]
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline109" class="outline-4">
+<h4 id="orgheadline109"><span class="section-number-4">8.13.8</span> Decimal Floating Point Arithmetic</h4>
+<div class="outline-text-4" id="text-8-13-8">
+<p>
+<code>decimal</code> module offers a Decimal datatype for decimal floating point arithmetic
+Compared to the built-in float implementation of binary floating point, the
+class is especially helpful for:
+</p>
+<ol class="org-ol">
+<li>financial applications and other uses which require exact decimal representation</li>
+<li>control over precision</li>
+<li>control over rounding to meet legal or regulatory requirements</li>
+<li>tracking of significant decimal places</li>
+<li>applications where the user expects the results to match calculations done by hand</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline113" class="outline-2">
+<h2 id="orgheadline113"><span class="section-number-2">9</span> Appendix</h2>
+<div class="outline-text-2" id="text-9">
+</div><div id="outline-container-orgheadline112" class="outline-3">
+<h3 id="orgheadline112"><span class="section-number-3">9.1</span> Executable Python Scripts</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+On BSD'ish Unix systems, Python scripts can be made directly executable, by putting
+</p>
+<pre class="example">
+#!/usr/bin/env python
+</pre>
+<p>
+<b>at the beginning of the script and giving the file an executable mode</b>
+</p>
+<pre class="example">
+$ chmod +x scriptname.py
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline114" class="outline-2">
+<h2 id="orgheadline114"><span class="section-number-2">10</span> Notes</h2>
+<div class="outline-text-2" id="text-10">
+<ol class="org-ol">
+<li>We can set a variable without define its type, but we <b>must</b> assign a value
+to it or we can't use it.</li>
+<li>One <b>unusual</b> Python feature is that the whitespace indentation of a piece
+of code affects its meaning. A logical block of statements such as the ones
+that make up a function should all have the same indentation, set in from
+the indentation of their parent function or <code>if</code> or whatever. If one of the
+lines in a group has a different indentation, it is flagged as a <b>syntax error</b>.</li>
+<li>Python does very little checking at compile time, deferring almost all type,
+name, etc. checks on each line until that line runs.<br  />
+Still, it can be debugged using these:
+<ul class="org-ul">
+<li><p>
+step by step:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">import</span> pdb
+pdb.set_trace()                 <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">use it just like stop point</span>
+</pre>
+</div></li>
+<li>brute: <code>print</code></li>
+</ul></li>
+<li>Sequence objects may be compared to other objects with the same sequence type.
+The comparison uses <b>lexicographical</b> ordering:
+<ul class="org-ul">
+<li>The first two items are compared.</li>
+<li>If they differ this determines the outcome of the comparison; if they are
+equal, the next two items are compared, and so on, until either sequence
+is exhausted.</li>
+<li>If two items to be compared are themselves sequences of the same type, the
+lexicographical comparison is carried out recursively.</li>
+<li>Comparing objects of different types is legal. The outcome is deterministic
+but arbitrary: the types are ordered by their name.<br  />
+(Thus, a list is always smaller than a string, a string is always smaller
+than a tuple, etc.)</li>
+<li>Mixed numeric types are compared accroding to their numeric value. (So 0
+equals 0.0, etc.)</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+The standard output file can be referenced as <code>sys.stdout</code>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+These methods do not write anything, they just return a new string.
+If the input string is too long, they don't truncate it, but return it
+unchanged.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+When size is <b>omitted or negative</b>, the entire contents of the file will
+be read.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+If the end of the file has been reached, <code>f.read()</code> will return an empty
+string('').
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+Only omitted on the last line of the file if the file doesn't end in a
+newline.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
+A <code>from_what</code> value of 0 measures from the beginning of the file (0 can be
+omitted), 1 uses the current file position, and 2 uses the end of the file as
+the reference point.
+</p>
+
+<hr  /></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Zhihao Wang</p>
+<p class="date">Created: 2016-09-02 周五 15:49</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>
