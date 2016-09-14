@@ -30,7 +30,7 @@ video {
     display:inline-block
 }
 
-audio:not([controls])0 {
+audio:not([controls]) {
     display:none;
     height:0
 }
