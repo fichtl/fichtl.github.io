@@ -1,16 +1,16 @@
-#+Title: Nothing
-#+Author: fichtl
-#+Date: <2016-09-12 Mon>
+#+Title: Something for Nothing
+#+Author: Wang, Zhihao
+#+Date: <2023-04-01 Sat>
 
 
-* Nothing
+* TODO Something
 
-** Update
-1. Add some stylesheet
-
-** Todo
-1. Do some thing ... haven't decided when to start~
+1. ...
 
 
-* Reference:
-1. [[http://gongzhitaao.org/orgcss/][CSS for org-export html by Zhitao Gong]]
+* DONE Nothing
+
+
+* References
+1. [[https://gohugo.io/][HUGO]]
+2. [[https://github.com/adityatelange/hugo-PaperMod/][HUGO PaperMod Theme]]
